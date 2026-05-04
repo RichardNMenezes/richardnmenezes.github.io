@@ -74,10 +74,6 @@ export default function HomePage () {
             <h2 id="contact-heading" className="section-title">
               Contato
             </h2>
-            <p className="contact-lead">
-              Estou aberto a novas oportunidades e colaborações. Envie uma mensagem
-              ou acompanhe o trabalho no GitHub.
-            </p>
             <div className="contact-actions">
               <a className="btn btn-primary" href="mailto:menezes.nns@icloud.com">
                 <MailIcon />
@@ -99,7 +95,7 @@ export default function HomePage () {
       <Footer />
       <style>{`
         .shell {
-          max-width: 960px;
+          max-width: 1120px;
           margin: 0 auto;
           padding: 0 1.25rem;
         }
@@ -124,8 +120,8 @@ export default function HomePage () {
         }
         .card-grid {
           display: grid;
-          gap: 1.25rem;
-          grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+          gap: 1.75rem;
+          grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
         }
         .contact-lead {
           margin: 0 0 1.5rem;

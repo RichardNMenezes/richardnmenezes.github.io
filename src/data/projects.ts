@@ -5,12 +5,10 @@ export type Project = {
   title: string
   shortDescription: string
   description: string
-  platform: string
-  release: string
-  technologies: string
-  role: string
   features: string[]
-  tags: string[]
+  /** null = botão desativado / em breve */
+  appStoreUrl: string | null
+  playStoreUrl: string | null
 }
 
 export const projects: Project[] = [
@@ -18,64 +16,52 @@ export const projects: Project[] = [
     slug: 'commi-app',
     title: 'Commi',
     shortDescription:
-      'App mobile para operações comerciais: vendas, estoque, clientes e relatórios.',
+      'Loja no bolso: vendas, estoque e relatórios sem dor de cabeça.',
     description:
-      'O Commi é o aplicativo mobile que acompanha o ecossistema Commi. Permite registrar vendas com várias formas de pagamento, acompanhar estoque, cadastrar clientes e produtos, gerir caixa e visualizar gráficos e relatórios. Integra-se à API em produção (api.commi.com.br) e foi construído com Expo e React Native, com notificações push e interface preparada para uso em campo.',
-    platform: 'iOS, Android e exportação web estática (Expo)',
-    release: 'Versão 1.0.4 (build iOS 20)',
-    technologies:
-      'React Native, Expo 54, TypeScript, expo-router, axios, Recharts (react-native-chart-kit), expo-notifications, Reanimated',
-    role: 'Desenvolvedor independente',
+      'O Commi é feito para quem precisa vender de verdade no dia a dia — na banca, no balcão ou na rua. Registre vendas em segundos, veja o que entra e sai do estoque, acompanhe clientes e entenda num relance como o negócio vai, com gráficos e relatórios que ajudam a decidir na hora.',
     features: [
-      'Vendas com múltiplos produtos, PIX, cartões e métodos personalizados',
-      'Estoque, alertas, produtos compostos e variantes',
-      'Clientes, filiais e assinaturas quando aplicável à conta',
-      'Relatórios, gráficos e exportação / compartilhamento (ex.: impressão)',
-      'Notificações e fluxo de autenticação alinhado à API Commi',
+      'Vendas com vários produtos e pagamentos à sua medida (PIX, cartão, dinheiro e mais)',
+      'Estoque sob controle, com alertas e produtos simples ou com variações',
+      'Clientes e filiais organizados — ideal para equipes que compartilham a mesma operação',
+      'Relatórios e exportações para compartilhar ou imprimir quando precisar',
+      'Notificações e início de sessão seguro para você e para a sua equipe',
     ],
-    tags: ['React Native', 'Expo', 'TypeScript', 'API REST'],
+    appStoreUrl: 'https://apps.apple.com/us/app/commi/id6756511448',
+    playStoreUrl: null,
   },
   {
     slug: 'linkes',
     title: 'Linkes',
     shortDescription:
-      'Jogo de raciocínio com mundos, modo zen, velocidade e desafio diário.',
+      'Puzzle de lógica: mundos, zen, velocidade e desafio diário.',
     description:
-      'Linkes é um puzzle para celular com progressão por mundos e fases, modo Zen sem pressão, modo Velocidade contra o cronômetro e desafio diário com fases aleatórias. Usa armazenamento local (SQLite no dispositivo), internacionalização (vários idiomas) e anúncios via Google Mobile Ads. Desenvolvido com Expo e React Native.',
-    platform: 'iOS e Android',
-    release: 'Versão 1.0.1 (Android versionCode 4)',
-    technologies:
-      'React Native, Expo 55, TypeScript, expo-router, expo-sqlite, Zustand, i18next, react-native-google-mobile-ads, Reanimated',
-    role: 'Desenvolvedor independente',
+      'Linkes convida você a traçar o caminho certo em cada nível — simples de aprender, difícil de largar. Explore mundos cheios de fases, desligue o estresse no modo Zen ou desafie a si mesmo contra o relógio na Velocidade. Todo dia tem um desafio novo: ideal para uma pausa rápida ou para ficar “só mais uma”. Vários idiomas e dá para jogar mesmo quando a internet fraqueja.',
     features: [
-      'Aventura com mundos e dezenas de fases',
-      'Modo Zen para jogar sem limite de tempo',
-      'Modo Velocidade com cronômetro e recordes',
-      'Desafio diário e economia de moedas / dicas',
-      'Suporte multilíngue e armazenamento offline',
+      'Aventura com mundos e muitas fases para ir subindo de nível',
+      'Modo Zen — jogue ao seu ritmo, sem pressa',
+      'Modo Velocidade — bata os seus recordes e sinta a adrenalina',
+      'Desafio diário e recompensas para quem gosta de voltar todos os dias',
+      'Progresso guardado no celular — o seu jogo, sempre com você',
     ],
-    tags: ['React Native', 'Expo', 'SQLite', 'AdMob'],
+    appStoreUrl: 'https://apps.apple.com/us/app/linkes/id6763957011',
+    playStoreUrl: null,
   },
   {
     slug: 'crystal-lab',
     title: 'Crystal Lab',
     shortDescription:
-      'Jogo incremental: minere cristais, evolua laboratórios, equipamentos e joalheria.',
+      'Toque no cristal, evolua labs e colecione joias raras.',
     description:
-      'Crystal Lab é um idle/incremental em que você toca no cristal para gerar recursos, desbloqueia laboratórios subsequentes, melhora ferramentas em Equipamentos, lapida cristais brutos e troca lapidados na joalheria por joias da coleção. Inclui produção passiva, galeria de progresso e anúncios (Google Mobile Ads). Stack Expo com navegação nativa, Zustand e animações com Reanimated.',
-    platform: 'iOS e Android',
-    release: 'Versão 1.0.0',
-    technologies:
-      'React Native, Expo 55, TypeScript, React Navigation, Zustand, i18next, react-native-google-mobile-ads, Reanimated',
-    role: 'Desenvolvedor independente',
+      'No Crystal Lab cada toque conta: o seu cristal gera riqueza, os laboratórios abrem novas possibilidades e os equipamentos multiplicam o que você produz. Transforme brutos em pedras brilhantes, invista na joalheria e complete a galeria com joias raras. Perfeito para quem curte ver tudo crescer, desbloquear o próximo passo e abrir o app “só mais cinco minutinhos”.',
     features: [
-      'Batalha por toques no cristal e mineração automática',
-      'Vários laboratórios com progressão por equipamentos',
-      'Galeria: lapidação, joalheria e coleção de joias',
-      'Persistência local e feedback háptico',
-      'Política de privacidade alinhada ao uso de anúncios (AdMob)',
+      'Ritmo viciante: cada toque no cristal conta, e a produção continua rendendo quando você volta ao jogo',
+      'Vários laboratórios — cada um com ferramentas para melhorar e evoluir',
+      'Lapidação, joalheria e uma coleção de joias para completar',
+      'Feedback na tela e vibração que deixam cada melhoria mais gostosa de aplicar',
+      'Ideal para pausas curtas ou para acompanhar a evolução ao longo do dia',
     ],
-    tags: ['React Native', 'Expo', 'Zustand', 'AdMob'],
+    appStoreUrl: null,
+    playStoreUrl: null,
   },
 ]
 

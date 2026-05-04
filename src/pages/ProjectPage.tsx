@@ -2,6 +2,7 @@ import { Link, Navigate, useParams } from 'react-router-dom'
 import { getProjectBySlug } from '../data/projects'
 import Footer from '../components/Footer'
 import ScrollReveal from '../components/ScrollReveal'
+import StoreBadges from '../components/StoreBadges'
 
 function ArrowBack () {
   return (
@@ -48,32 +49,6 @@ export default function ProjectPage () {
       </ScrollReveal>
 
       <ScrollReveal delay={0.1}>
-        <section className="block" aria-labelledby="details-heading">
-          <h2 id="details-heading" className="block-title">
-            Detalhes
-          </h2>
-          <div className="detail-grid">
-            <div className="detail-card">
-              <span className="detail-label">Plataforma</span>
-              <span className="detail-value">{project.platform}</span>
-            </div>
-            <div className="detail-card">
-              <span className="detail-label">Lançamento</span>
-              <span className="detail-value">{project.release}</span>
-            </div>
-            <div className="detail-card">
-              <span className="detail-label">Tecnologias</span>
-              <span className="detail-value">{project.technologies}</span>
-            </div>
-            <div className="detail-card">
-              <span className="detail-label">Função</span>
-              <span className="detail-value">{project.role}</span>
-            </div>
-          </div>
-        </section>
-      </ScrollReveal>
-
-      <ScrollReveal delay={0.12}>
         <section className="block" aria-labelledby="features-heading">
           <h2 id="features-heading" className="block-title">
             Funcionalidades
@@ -86,7 +61,15 @@ export default function ProjectPage () {
         </section>
       </ScrollReveal>
 
-      <ScrollReveal delay={0.14}>
+      <ScrollReveal delay={0.11}>
+        <StoreBadges
+          appName={project.title}
+          appStoreUrl={project.appStoreUrl}
+          playStoreUrl={project.playStoreUrl}
+        />
+      </ScrollReveal>
+
+      <ScrollReveal delay={0.12}>
         <div className="privacy-cta-wrap">
           <Link to={`/privacy/${project.slug}`} className="btn-privacy">
             Ver política de privacidade
@@ -142,31 +125,6 @@ export default function ProjectPage () {
           margin: 0;
           color: var(--text);
           font-size: 0.98rem;
-        }
-        .detail-grid {
-          display: grid;
-          gap: 0.85rem;
-          grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-        }
-        .detail-card {
-          padding: 1rem 1.1rem;
-          background: var(--bg-card);
-          border: 1px solid var(--border);
-          border-radius: var(--radius);
-        }
-        .detail-label {
-          display: block;
-          font-size: 0.75rem;
-          text-transform: uppercase;
-          letter-spacing: 0.06em;
-          color: var(--muted);
-          margin-bottom: 0.35rem;
-        }
-        .detail-value {
-          font-size: 0.9rem;
-          font-weight: 600;
-          color: var(--text);
-          line-height: 1.45;
         }
         .feature-list {
           margin: 0;
