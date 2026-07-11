@@ -1,4 +1,4 @@
-export type ProjectSlug = 'commi-app' | 'linkes' | 'crystal-lab'
+export type ProjectSlug = 'commi-app' | 'linkes' | 'crystal-lab' | 'universus-merge'
 
 export type Project = {
   slug: ProjectSlug
@@ -59,6 +59,22 @@ export const projects: Project[] = [
       'Lapidação, joalheria e uma coleção de joias para completar',
       'Feedback na tela e vibração que deixam cada melhoria mais gostosa de aplicar',
       'Ideal para pausas curtas ou para acompanhar a evolução ao longo do dia',
+    ],
+    appStoreUrl: null,
+    playStoreUrl: null,
+  },
+  {
+    slug: 'universus-merge',
+    title: 'Universus Merge',
+    shortDescription:
+      'Merge cósmico: funde partículas, forja buracos negros e expande o universo.',
+    description:
+      'No Universus Merge você começa com um grão de poeira e vai fundindo — dois iguais viram um maior — até forjar estrelas, galáxias e buracos negros. O jogo roda offline, rende recompensas enquanto você está fora e tem visuais neon procedurais feitos com Skia. Trinta tiers para descobrir, do Fragmento à Singularidade Cósmica, com um codex que registra cada descoberta e anúncios apenas quando você quiser.',
+    features: [
+      'Loop de merge infinito com 30 tiers cósmicos — de Poeira a Singularidade Cósmica',
+      'Visuais neon procedurais em tempo real: partículas, glow e StarField parallax com Skia',
+      'Idle offline — o universo continua crescendo mesmo quando você fecha o app',
+      'Codex de descobertas: cada tier inédito desbloqueado fica registrado com nome e sprite'
     ],
     appStoreUrl: null,
     playStoreUrl: null,

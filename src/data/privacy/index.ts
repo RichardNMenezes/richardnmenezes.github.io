@@ -2,12 +2,14 @@ import type { ProjectSlug } from '../projects'
 import { commiByLocale } from './commi'
 import { crystalLabByLocale } from './crystalLab'
 import { linkesByLocale } from './linkes'
+import { universusMergeByLocale } from './universusMerge'
 import type { PrivacyDoc } from './types'
 
 const registry: Record<ProjectSlug, Record<string, PrivacyDoc>> = {
   'commi-app': commiByLocale,
   linkes: linkesByLocale,
   'crystal-lab': crystalLabByLocale,
+  'universus-merge': universusMergeByLocale,
 }
 
 export const privacyLangButtonLabel: Record<string, string> = {
