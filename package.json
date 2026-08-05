@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && cp dist/index.html dist/404.html && cp app-ads.txt dist/app-ads.txt && mkdir -p dist/privacy/crystal-lab dist/privacy/commi-app dist/privacy/linkes dist/privacy/universus-merge && cp dist/index.html dist/privacy/crystal-lab/index.html && cp dist/index.html dist/privacy/commi-app/index.html && cp dist/index.html dist/privacy/linkes/index.html && cp dist/index.html dist/privacy/universus-merge/index.html",
+    "build": "vite build && cp dist/index.html dist/404.html && cp app-ads.txt dist/app-ads.txt && mkdir -p dist/privacy/crystal-lab dist/privacy/commi-app dist/privacy/linkes dist/privacy/universus-merge dist/privacy/bellafy && cp dist/index.html dist/privacy/crystal-lab/index.html && cp dist/index.html dist/privacy/commi-app/index.html && cp dist/index.html dist/privacy/linkes/index.html && cp dist/index.html dist/privacy/universus-merge/index.html && cp dist/index.html dist/privacy/bellafy/index.html",
     "preview": "vite preview"
   },
   "dependencies": {

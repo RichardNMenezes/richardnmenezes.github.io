@@ -1,4 +1,4 @@
-export type ProjectSlug = 'commi-app' | 'linkes' | 'crystal-lab' | 'universus-merge'
+export type ProjectSlug = 'commi-app' | 'linkes' | 'crystal-lab' | 'universus-merge' | 'bellafy'
 
 export type Project = {
   slug: ProjectSlug
@@ -75,6 +75,23 @@ export const projects: Project[] = [
       'Visuais neon procedurais em tempo real: partículas, glow e StarField parallax com Skia',
       'Idle offline — o universo continua crescendo mesmo quando você fecha o app',
       'Codex de descobertas: cada tier inédito desbloqueado fica registrado com nome e sprite'
+    ],
+    appStoreUrl: null,
+    playStoreUrl: null,
+  },
+  {
+    slug: 'bellafy',
+    title: 'Bellafy',
+    shortDescription:
+      'Agenda inteligente para salões: serviços, equipe e clientes em um só lugar.',
+    description:
+      'O Bellafy foi pensado para quem vive o salão no dia a dia — donos, profissionais e clientes. Administradores organizam serviços, equipe, horários e agendamentos; profissionais acompanham a agenda; clientes descobrem salões, escolhem serviços e reservam horários com poucos toques. Tudo sincronizado em tempo real, com fotos nos serviços e ferramentas para compartilhar disponibilidade.',
+    features: [
+      'Agenda completa para salões — visualização por profissional, detalhes e cancelamentos',
+      'Cadastro de serviços, clientes e profissionais com fotos e horários de funcionamento',
+      'Fluxo de agendamento para clientes: salões, serviços, data e confirmação',
+      'Perfis distintos para administrador, profissional e cliente, cada um com sua área',
+      'Compartilhamento de horários disponíveis e sincronização com a API Bellafy',
     ],
     appStoreUrl: null,
     playStoreUrl: null,

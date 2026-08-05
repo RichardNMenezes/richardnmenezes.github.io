@@ -1,4 +1,5 @@
 import type { ProjectSlug } from '../projects'
+import { bellafyByLocale } from './bellafy'
 import { commiByLocale } from './commi'
 import { crystalLabByLocale } from './crystalLab'
 import { linkesByLocale } from './linkes'
@@ -10,6 +11,7 @@ const registry: Record<ProjectSlug, Record<string, PrivacyDoc>> = {
   linkes: linkesByLocale,
   'crystal-lab': crystalLabByLocale,
   'universus-merge': universusMergeByLocale,
+  bellafy: bellafyByLocale,
 }
 
 export const privacyLangButtonLabel: Record<string, string> = {
