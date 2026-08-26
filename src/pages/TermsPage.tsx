@@ -1,6 +1,4 @@
-import {
-  useLayoutEffect,
-} from 'react'
+import { useLayoutEffect } from 'react'
 import {
   Link,
   Navigate,
@@ -9,18 +7,19 @@ import {
 } from 'react-router-dom'
 import type { ProjectSlug } from '../data/projects'
 import {
-  getPrivacy,
-  getPrivacyLocaleIds,
-  isValidPrivacySlug,
+  getTerms,
+  getTermsLocaleIds,
+  isValidTermsSlug,
+  resolveTermsLocale,
+} from '../data/terms'
+import {
   langNavAriaForLocale,
   langNavLabelForLocale,
   lastUpdatedLabelForLocale,
   privacyLangButtonLabel,
-  resolvePrivacyLocale,
 } from '../data/privacy'
 import Footer from '../components/Footer'
 import ScrollReveal from '../components/ScrollReveal'
-import { isValidTermsSlug } from '../data/terms'
 
 function ArrowBack () {
   return (
@@ -36,28 +35,28 @@ function ArrowBack () {
   )
 }
 
-function privacyPath (slug: string, locale: string): string {
-  if (locale === 'pt-BR') return `/privacy/${slug}`
-  return `/privacy/${slug}?lang=${encodeURIComponent (locale)}`
+function termsPath (slug: string, locale: string): string {
+  if (locale === 'pt-BR') return `/terms/${slug}`
+  return `/terms/${slug}?lang=${encodeURIComponent (locale)}`
 }
 
-export default function PrivacyPage () {
+export default function TermsPage () {
   const { slug } = useParams ()
   const [searchParams] = useSearchParams ()
   const rawLang = searchParams.get ('lang')
 
   const projectSlug =
-    slug && isValidPrivacySlug (slug) ? (slug as ProjectSlug) : null
-  const allowed = projectSlug ? getPrivacyLocaleIds (projectSlug) : []
+    slug && isValidTermsSlug (slug) ? (slug as ProjectSlug) : null
+  const allowed = projectSlug ? getTermsLocaleIds (projectSlug) : []
   const invalidLang = Boolean (
     rawLang && projectSlug && !allowed.includes (rawLang)
   )
   const locale =
     projectSlug && !invalidLang
-      ? resolvePrivacyLocale (projectSlug, rawLang)
+      ? resolveTermsLocale (projectSlug, rawLang)
       : 'pt-BR'
   const doc =
-    projectSlug && !invalidLang ? getPrivacy (projectSlug, locale) : undefined
+    projectSlug && !invalidLang ? getTerms (projectSlug, locale) : undefined
 
   useLayoutEffect (() => {
     if (!doc) return
@@ -69,12 +68,12 @@ export default function PrivacyPage () {
     }
   }, [doc, slug])
 
-  if (!slug || !isValidPrivacySlug (slug)) {
+  if (!slug || !isValidTermsSlug (slug)) {
     return <Navigate to="/" replace />
   }
 
   if (invalidLang) {
-    return <Navigate to={`/privacy/${slug}`} replace />
+    return <Navigate to={`/terms/${slug}`} replace />
   }
 
   if (!doc) {
@@ -96,11 +95,9 @@ export default function PrivacyPage () {
           <Link to="/" className="back-link subtle">
             Portfólio
           </Link>
-          {isValidTermsSlug (slug) ? (
-            <Link to={`/terms/${slug}`} className="back-link">
-              Termos de uso
-            </Link>
-          ) : null}
+          <Link to={`/privacy/${slug}`} className="back-link">
+            Política de privacidade
+          </Link>
         </div>
       </ScrollReveal>
 
@@ -111,7 +108,7 @@ export default function PrivacyPage () {
             {allowed.map ((id) => (
               <Link
                 key={id}
-                to={privacyPath (slug, id)}
+                to={termsPath (slug, id)}
                 className={id === locale ? 'lang-btn lang-btn-active' : 'lang-btn'}
                 hrefLang={id}
                 lang={id}
@@ -124,19 +121,19 @@ export default function PrivacyPage () {
       </ScrollReveal>
 
       <ScrollReveal delay={0.05}>
-        <header className="privacy-head">
-          <h1 className="privacy-title">{doc.title}</h1>
-          <p className="privacy-meta">{doc.meta}</p>
+        <header className="terms-head">
+          <h1 className="terms-title">{doc.title}</h1>
+          <p className="terms-meta">{doc.meta}</p>
         </header>
       </ScrollReveal>
 
       <ScrollReveal delay={0.07}>
-        <p className="privacy-intro">{doc.intro}</p>
+        <p className="terms-intro">{doc.intro}</p>
       </ScrollReveal>
 
       {doc.sections.map ((sec, i) => (
         <ScrollReveal key={`${locale}-${sec.heading}`} delay={0.08 + i * 0.02}>
-          <section className="privacy-section">
+          <section className="terms-section">
             <h2>{sec.heading}</h2>
             <p>{sec.body}</p>
           </section>
@@ -144,7 +141,7 @@ export default function PrivacyPage () {
       ))}
 
       <ScrollReveal delay={0.2}>
-        <footer className="privacy-foot">
+        <footer className="terms-foot">
           <p>
             <strong>{lastLbl}:</strong> {doc.lastUpdated}.
           </p>
@@ -229,43 +226,43 @@ export default function PrivacyPage () {
           );
           box-shadow: 0 6px 22px rgba(99, 102, 241, 0.32);
         }
-        .privacy-head {
+        .terms-head {
           margin-bottom: 1rem;
         }
-        .privacy-title {
+        .terms-title {
           margin: 0;
           font-size: 1.65rem;
           font-weight: 700;
           letter-spacing: -0.02em;
           color: var(--text);
         }
-        .privacy-meta {
+        .terms-meta {
           margin: 0.5rem 0 0;
           font-size: 0.9rem;
           color: var(--muted);
         }
-        .privacy-intro {
+        .terms-intro {
           margin: 0 0 1.5rem;
           color: var(--text);
           font-size: 0.98rem;
         }
-        .privacy-section h2 {
+        .terms-section h2 {
           margin: 1.5rem 0 0.5rem;
           font-size: 1.05rem;
           font-weight: 600;
           color: var(--heading);
         }
-        .privacy-section p {
+        .terms-section p {
           margin: 0;
           color: var(--muted);
           font-size: 0.95rem;
         }
-        .privacy-foot {
+        .terms-foot {
           margin: 2.5rem 0 0;
           font-size: 0.875rem;
           color: var(--muted);
         }
-        .privacy-foot strong {
+        .terms-foot strong {
           color: var(--text);
         }
         @media (max-width: 520px) {

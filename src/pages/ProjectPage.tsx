@@ -1,5 +1,6 @@
 import { Link, Navigate, useParams } from 'react-router-dom'
 import { getProjectBySlug } from '../data/projects'
+import { isValidTermsSlug } from '../data/terms'
 import Footer from '../components/Footer'
 import ScrollReveal from '../components/ScrollReveal'
 import StoreBadges from '../components/StoreBadges'
@@ -70,10 +71,15 @@ export default function ProjectPage () {
       </ScrollReveal>
 
       <ScrollReveal delay={0.12}>
-        <div className="privacy-cta-wrap">
-          <Link to={`/privacy/${project.slug}`} className="btn-privacy">
-            Ver política de privacidade
+        <div className="legal-cta-wrap">
+          <Link to={`/privacy/${project.slug}`} className="btn-legal btn-legal-primary">
+            Política de privacidade
           </Link>
+          {isValidTermsSlug (project.slug) ? (
+            <Link to={`/terms/${project.slug}`} className="btn-legal btn-legal-secondary">
+              Termos de uso
+            </Link>
+          ) : null}
         </div>
       </ScrollReveal>
 
@@ -152,10 +158,13 @@ export default function ProjectPage () {
             var(--gradient-end)
           );
         }
-        .privacy-cta-wrap {
+        .legal-cta-wrap {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 0.75rem;
           margin: 2rem 0 1rem;
         }
-        .btn-privacy {
+        .btn-legal {
           display: inline-flex;
           align-items: center;
           justify-content: center;
@@ -164,19 +173,30 @@ export default function ProjectPage () {
           font-size: 0.9rem;
           font-weight: 600;
           color: #fff;
+          border: 1px solid transparent;
+          cursor: pointer;
+          transition:
+            border-color 0.2s ease,
+            opacity 0.2s ease,
+            transform 0.15s ease;
+        }
+        .btn-legal-primary {
           background: linear-gradient(
             135deg,
             var(--gradient-start),
             var(--gradient-end)
           );
-          border: none;
-          cursor: pointer;
           box-shadow: 0 8px 28px rgba(99, 102, 241, 0.3);
-          transition:
-            opacity 0.2s ease,
-            transform 0.15s ease;
         }
-        .btn-privacy:hover {
+        .btn-legal-secondary {
+          color: var(--text);
+          border-color: var(--border);
+          background: transparent;
+        }
+        .btn-legal-secondary:hover {
+          border-color: rgba(96, 165, 250, 0.35);
+        }
+        .btn-legal:hover {
           opacity: 0.95;
           transform: translateY(-1px);
         }

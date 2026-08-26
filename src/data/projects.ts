@@ -1,4 +1,4 @@
-export type ProjectSlug = 'commi-app' | 'linkes' | 'crystal-lab' | 'universus-merge' | 'bellafy'
+export type ProjectSlug = 'commi-app' | 'linkes' | 'crystal-lab' | 'universus-merge' | 'bellafy' | 'rotivoo'
 
 export type Project = {
   slug: ProjectSlug
@@ -92,6 +92,23 @@ export const projects: Project[] = [
       'Fluxo de agendamento para clientes: salões, serviços, data e confirmação',
       'Perfis distintos para administrador, profissional e cliente, cada um com sua área',
       'Compartilhamento de horários disponíveis e sincronização com a API Bellafy',
+    ],
+    appStoreUrl: null,
+    playStoreUrl: null,
+  },
+  {
+    slug: 'rotivoo',
+    title: 'Rotivoo',
+    shortDescription:
+      'Rotas inteligentes para entregadores: organize pacotes, otimize o percurso e acompanhe o lucro.',
+    description:
+      'O Rotivoo ajuda entregadores independentes a transformar uma pilha de pacotes em uma rota clara e eficiente. Cadastre ou importe entregas, valide endereços, otimize a sequência de paradas e acompanhe o andamento do dia — inclusive sem conexão. O histórico reúne entregas, custos e ganhos para mostrar o resultado real de cada rota.',
+    features: [
+      'Cadastro de pacotes por formulário, código de barras, OCR de etiquetas, planilha ou texto do WhatsApp',
+      'Validação de endereços, agrupamento por parada e otimização da sequência de entregas',
+      'Acompanhamento da rota com localização em primeiro plano e abertura no app de navegação',
+      'Confirmação de entrega ou tentativa, com fila offline para sincronizar quando a internet voltar',
+      'Histórico de rotas, abastecimentos, custos, ganhos e lucro estimado por período',
     ],
     appStoreUrl: null,
     playStoreUrl: null,
