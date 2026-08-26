@@ -1,6 +1,6 @@
 import type { PrivacyDoc } from './types'
 
-export const rotivooByLocale: Record<'pt-BR', PrivacyDoc> = {
+export const rotivooByLocale: Record<'pt-BR' | 'en', PrivacyDoc> = {
   'pt-BR': {
     locale: 'pt-BR',
     htmlLang: 'pt-BR',
@@ -91,5 +91,96 @@ export const rotivooByLocale: Record<'pt-BR', PrivacyDoc> = {
       },
     ],
     lastUpdated: '26 de agosto de 2026',
+  },
+  en: {
+    locale: 'en',
+    htmlLang: 'en',
+    title: 'Privacy Policy',
+    meta: 'Rotivoo · mobile app (iOS and Android)',
+    intro:
+      'This Privacy Policy explains how Rotivoo processes personal data to provide package organization, route optimization, delivery tracking, and cost and earnings management. It covers data about the account holder and information about recipients that a courier enters in the app.',
+    sections: [
+      {
+        heading: '1. Controller and contact',
+        body:
+          'Rotivoo is provided by Richard Menezes, who is responsible for processing account, security, and service operation data. For questions, data subject requests, or privacy matters, contact menezes.nns@icloud.com.',
+      },
+      {
+        heading: '2. Scope and processing roles',
+        body:
+          'Rotivoo determines the purposes of processing for user registration, authentication, preferences, and security. When a courier adds recipient or customer data to perform their own deliveries, the courier is responsible for having a legitimate purpose and appropriate authorization to use that information. Rotivoo provides the tool and processes this data to deliver the requested service. A recipient may contact the responsible courier and may also use the contact channel above so the request can be directed appropriately.',
+      },
+      {
+        heading: '3. Account, profile, and security data',
+        body:
+          'We process name, email address, a password protected by hashing on the server, email verification status, app preferences, and the user’s location choice. We may also process session identifiers and dates, device or browser user agent, authentication tokens, temporary verification or recovery codes, and technical records needed for security, diagnostics, and abuse prevention. Tokens and a copy of the session may remain in secure device storage when the user chooses to stay signed in.',
+      },
+      {
+        heading: '4. Location, addresses, and routes',
+        body:
+          'With system permission, the app accesses device location only while it is in use. The position may be used to set the route starting point, recalculate the route, display the user’s position on the map, and identify proximity to the next stop. Rotivoo does not request background location. We also process addresses, neighborhoods, start and end points, geographic coordinates, stop order, route geometry, distance, duration, and optimization data. Addresses may be converted into coordinates by the operating system’s geocoding service.',
+      },
+      {
+        heading: '5. Labels, camera, OCR, and imports',
+        body:
+          'The camera may be used to scan barcodes, QR codes, and package labels. For OCR, the image is processed locally on the device using platform features; the temporary photo is deleted after processing and is not sent to the Rotivoo API. Extracted text may include the package code, recipient, and address and is always presented for review before it is saved. Spreadsheets and pasted WhatsApp text are sent to the API only to be interpreted and returned as an editable preview. They may contain a code, name, phone number, instructions, reference, address, neighborhood, and delivery value. The original file or text is not kept as a route attachment; only the fields the user reviews and confirms become part of the delivery data.',
+      },
+      {
+        heading: '6. Delivery history, vehicle, and financial data',
+        body:
+          'We process planned and completed routes, dates and times, the status of each stop, completed deliveries, failed attempts, reasons, notes, number of attempts, and route events. Users may also record vehicle information, fuel or energy type, consumption, refueling or charging entries, odometer readings, costs, revenue, maintenance, and estimated profit and profit per hour. This data is used to display history and reports by period and to duplicate previous routes.',
+      },
+      {
+        heading: '7. Purposes of processing',
+        body:
+          'We use data to create and protect accounts; maintain sessions; verify and recover access; validate addresses; build, optimize, and recalculate routes; provide maps and navigation; record delivery outcomes; synchronize operations performed offline; calculate cost and earnings metrics; import and organize information supplied by the user; provide account export and deletion; deliver support; prevent fraud and abuse; fix failures; and comply with legal obligations.',
+      },
+      {
+        heading: '8. Legal bases',
+        body:
+          'Under Brazil’s General Data Protection Law (LGPD), processing may rely on performance of a contract and steps requested by the user; consent when an optional feature depends on the data subject’s choice, such as location access; legitimate interests in keeping the service secure, stable, and protected against abuse, following an assessment of necessity and safeguards; and compliance with legal obligations or the exercise of legal rights. Permission granted in iOS or Android can be revoked at any time in the device settings.',
+      },
+      {
+        heading: '9. Sharing and third-party services',
+        body:
+          'Data may be processed by hosting, database, security, and email providers to the extent needed to operate the service. Depending on the device, Apple or Google may receive geocoding queries and information needed to display maps under their own policies. The configured routing service, such as OSRM, receives origin and stop coordinates to calculate a matrix, distance, and route. When the user chooses to open an external navigation app, the destination is sent to that app. We may also share information when required by law or a valid order. We do not sell personal data, and Rotivoo does not use behavioral advertising SDKs.',
+      },
+      {
+        heading: '10. Storage and retention',
+        body:
+          'Account, route, delivery, vehicle, refueling, and history data remains on the servers while the account is active and for as long as needed for the purposes described above. Sessions expire or are revoked according to security settings. Route drafts, route cache, and pending operations may also remain locally on the device to support continuity and offline use. Deleting the account removes active data linked to the account from Rotivoo’s operational databases, but local data may remain on the device; to remove it, clear the app data or uninstall the app. Minimal records or backup copies may be retained for a limited period when needed for security, legal compliance, or the exercise of legal rights.',
+      },
+      {
+        heading: '11. International data transfers',
+        body:
+          'Some infrastructure, mapping, geocoding, routing, or email providers may process data outside Brazil. Where applicable, we seek to use providers and mechanisms consistent with the LGPD and limit sharing to what is necessary for the selected feature.',
+      },
+      {
+        heading: '12. Security',
+        body:
+          'We use technical and organizational measures proportionate to the risks, including HTTPS communication with the API, hashed passwords, revocable session tokens, secure device storage, limits and expiration for access codes, and authentication controls. No system is completely immune to incidents. If a relevant event occurs, we will take the measures required by applicable law.',
+      },
+      {
+        heading: '13. Data subject rights',
+        body:
+          'Subject to the LGPD, a data subject may request confirmation and access to processing, correction, information about sharing, portability when regulated, anonymization, blocking or deletion of unnecessary or unlawfully processed data, objection where applicable, and review of applicable automated decisions. The data subject may also withdraw consent and request deletion of data processed on that basis, subject to legal retention grounds. Users can export their data and delete their account within the app or use the contact email. We may request information to verify the requester’s identity.',
+      },
+      {
+        heading: '14. Recipient data',
+        body:
+          'Couriers must enter only the recipient data needed to organize and complete a delivery, avoid excessive notes, and restrict access to their device and account. Rotivoo must not be used to store sensitive data or information unrelated to the logistics purpose. Requests from recipients may require cooperation from the courier who registered the delivery.',
+      },
+      {
+        heading: '15. Children and adolescents',
+        body:
+          'Rotivoo is intended for couriers who have the legal capacity to perform delivery work and is not directed to children. Users must not enter data about children or adolescents unless it is strictly necessary, supported by an appropriate legal basis, and consistent with the best interests of the data subject.',
+      },
+      {
+        heading: '16. Changes to this policy',
+        body:
+          'This policy may be updated to reflect changes to the app, providers, or applicable law. Material changes will be communicated through reasonable means, such as an in-app notice or an update to this page. The current version and revision date will always be available at this address.',
+      },
+    ],
+    lastUpdated: 'August 26, 2026',
   },
 }
