@@ -76,7 +76,7 @@ export const projects: Project[] = [
       'Idle offline — o universo continua crescendo mesmo quando você fecha o app',
       'Codex de descobertas: cada tier inédito desbloqueado fica registrado com nome e sprite'
     ],
-    appStoreUrl: null,
+    appStoreUrl: 'https://apps.apple.com/us/app/universus-merge/id6767405337',
     playStoreUrl: null,
   },
   {
