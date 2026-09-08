@@ -14,11 +14,11 @@ export type Project = {
 export const projects: Project[] = [
   {
     slug: 'palworld-paldeck',
-    title: 'Palworld Paldeck',
+    title: 'Palworld Guide List',
     shortDescription:
       'Seu guia de Pals: catálogo, reprodução, habitats e equipes, também offline.',
     description:
-      'O Palworld Paldeck é um guia de fãs para consultar Pals, planejar combinações de reprodução e organizar suas aventuras em Palworld. Explore atributos, elementos, habilidades, aptidões de trabalho e itens; encontre habitats nos mapas e monte equipes com os Pals da sua coleção. O catálogo funciona offline, com conteúdo em português brasileiro e inglês. Aplicativo independente, sem afiliação ou endosso da Pocketpair.',
+      'O Palworld Guide List é um guia de fãs para consultar Pals, planejar combinações de reprodução e organizar suas aventuras em Palworld. Explore atributos, elementos, habilidades, aptidões de trabalho e itens; encontre habitats nos mapas e monte equipes com os Pals da sua coleção. O catálogo funciona offline, com conteúdo em português brasileiro e inglês. Aplicativo independente, sem afiliação ou endosso da Pocketpair.',
     features: [
       'Catálogo de Pals com busca, atributos e filtros por elemento, aptidão de trabalho e coleção',
       'Calculadora de reprodução direta e reversa, com prioridade para Pals que você já possui',

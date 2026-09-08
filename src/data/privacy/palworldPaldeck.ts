@@ -5,14 +5,14 @@ export const palworldPaldeckByLocale: Record<'pt-BR' | 'en', PrivacyDoc> = {
     locale: 'pt-BR',
     htmlLang: 'pt-BR',
     title: 'Política de privacidade',
-    meta: 'Palworld Paldeck · aplicativo para iOS, Android e versão web',
+    meta: 'Palworld Guide List · aplicativo para iOS, Android e versão web',
     intro:
-      'Esta política explica como o Palworld Paldeck trata informações no aplicativo e em sua versão web, quando disponível. É um guia independente feito por fãs, sem afiliação ou endosso da Pocketpair. As práticas abaixo descrevem a versão atual; a disponibilidade de anúncios e serviços depende da plataforma e da configuração da versão distribuída.',
+      'Esta política explica como o Palworld Guide List trata informações no aplicativo e em sua versão web, quando disponível. É um guia independente feito por fãs, sem afiliação ou endosso da Pocketpair. As práticas abaixo descrevem a versão atual; a disponibilidade de anúncios e serviços depende da plataforma e da configuração da versão distribuída.',
     sections: [
       {
         heading: '1. Responsável e contato',
         body:
-          'Richard Menezes é o responsável pelo Palworld Paldeck e pelo tratamento de dados sob seu controle. Para dúvidas, pedidos relacionados a dados pessoais ou assuntos de privacidade, escreva para menezes.nns@icloud.com. Se você entrar em contato, trataremos seu endereço de e-mail, o conteúdo da mensagem e os anexos que decidir enviar para responder à solicitação.',
+          'Richard Menezes é o responsável pelo Palworld Guide List e pelo tratamento de dados sob seu controle. Para dúvidas, pedidos relacionados a dados pessoais ou assuntos de privacidade, escreva para menezes.nns@icloud.com. Se você entrar em contato, trataremos seu endereço de e-mail, o conteúdo da mensagem e os anexos que decidir enviar para responder à solicitação.',
         links: [{ label: 'Entrar em contato sobre privacidade', href: 'mailto:menezes.nns@icloud.com' }],
       },
       {
@@ -100,14 +100,14 @@ export const palworldPaldeckByLocale: Record<'pt-BR' | 'en', PrivacyDoc> = {
     locale: 'en',
     htmlLang: 'en',
     title: 'Privacy policy',
-    meta: 'Palworld Paldeck · iOS, Android and web app',
+    meta: 'Palworld Guide List · iOS, Android and web app',
     intro:
-      'This policy explains how Palworld Paldeck handles information in the app and its web version, where available. It is an independent fan-made guide, without affiliation with or endorsement by Pocketpair. The practices below describe the current version; the availability of ads and services depends on the platform and the configuration of the distributed release.',
+      'This policy explains how Palworld Guide List handles information in the app and its web version, where available. It is an independent fan-made guide, without affiliation with or endorsement by Pocketpair. The practices below describe the current version; the availability of ads and services depends on the platform and the configuration of the distributed release.',
     sections: [
       {
         heading: '1. Controller and contact',
         body:
-          'Richard Menezes is responsible for Palworld Paldeck and the processing of data under his control. For questions, personal data requests or privacy matters, email menezes.nns@icloud.com. If you contact us, we process your email address, message and any attachments you choose to send in order to respond to your request.',
+          'Richard Menezes is responsible for Palworld Guide List and the processing of data under his control. For questions, personal data requests or privacy matters, email menezes.nns@icloud.com. If you contact us, we process your email address, message and any attachments you choose to send in order to respond to your request.',
         links: [{ label: 'Contact us about privacy', href: 'mailto:menezes.nns@icloud.com' }],
       },
       {
