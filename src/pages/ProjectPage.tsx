@@ -73,8 +73,18 @@ export default function ProjectPage () {
       <ScrollReveal delay={0.12}>
         <div className="legal-cta-wrap">
           <Link to={`/privacy/${project.slug}`} className="btn-legal btn-legal-primary">
-            Política de privacidade
+            Política de privacidade{project.slug === 'palworld-paldeck' ? ' · PT-BR' : ''}
           </Link>
+          {project.slug === 'palworld-paldeck' ? (
+            <Link
+              to={`/privacy/${project.slug}?lang=en`}
+              className="btn-legal btn-legal-secondary"
+              lang="en"
+              hrefLang="en"
+            >
+              Privacy policy · English
+            </Link>
+          ) : null}
           {isValidTermsSlug (project.slug) ? (
             <Link to={`/terms/${project.slug}`} className="btn-legal btn-legal-secondary">
               Termos de uso

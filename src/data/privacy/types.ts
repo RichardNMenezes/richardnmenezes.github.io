@@ -1,4 +1,8 @@
-export type PrivacySection = { heading: string, body: string }
+export type PrivacySection = {
+  heading: string
+  body: string
+  links?: { label: string, href: string }[]
+}
 
 export type PrivacyDoc = {
   locale: string

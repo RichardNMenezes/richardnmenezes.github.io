@@ -91,14 +91,14 @@ export default function PrivacyPage () {
         <div className="nav-row">
           <Link to={`/project/${slug}`} className="back-link">
             <ArrowBack />
-            Voltar ao app
+            {locale === 'en' ? 'Back to app' : 'Voltar ao app'}
           </Link>
           <Link to="/" className="back-link subtle">
-            Portfólio
+            {locale === 'en' ? 'Portfolio' : 'Portfólio'}
           </Link>
           {isValidTermsSlug (slug) ? (
             <Link to={`/terms/${slug}`} className="back-link">
-              Termos de uso
+              {locale === 'en' ? 'Terms of use' : 'Termos de uso'}
             </Link>
           ) : null}
         </div>
@@ -115,6 +115,7 @@ export default function PrivacyPage () {
                 className={id === locale ? 'lang-btn lang-btn-active' : 'lang-btn'}
                 hrefLang={id}
                 lang={id}
+                aria-current={id === locale ? 'page' : undefined}
               >
                 {privacyLangButtonLabel[id] ?? id}
               </Link>
@@ -139,6 +140,15 @@ export default function PrivacyPage () {
           <section className="privacy-section">
             <h2>{sec.heading}</h2>
             <p>{sec.body}</p>
+            {sec.links && (
+              <ul className="privacy-links">
+                {sec.links.map ((link) => (
+                  <li key={link.href}>
+                    <a href={link.href}>{link.label}</a>
+                  </li>
+                ))}
+              </ul>
+            )}
           </section>
         </ScrollReveal>
       ))}
@@ -151,7 +161,7 @@ export default function PrivacyPage () {
         </footer>
       </ScrollReveal>
 
-      <Footer />
+      <Footer locale={locale} />
       <style>{`
         .shell {
           max-width: 42rem;
@@ -264,6 +274,20 @@ export default function PrivacyPage () {
           margin: 2.5rem 0 0;
           font-size: 0.875rem;
           color: var(--muted);
+        }
+        .privacy-links {
+          margin: 0.75rem 0 0;
+          padding-left: 1.25rem;
+          font-size: 0.9rem;
+        }
+        .privacy-links li + li {
+          margin-top: 0.35rem;
+        }
+        .privacy-links a {
+          color: var(--heading);
+          text-decoration: underline;
+          text-underline-offset: 0.2em;
+          overflow-wrap: anywhere;
         }
         .privacy-foot strong {
           color: var(--text);

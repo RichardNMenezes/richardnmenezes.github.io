@@ -3,6 +3,7 @@ import { bellafyByLocale } from './bellafy'
 import { commiByLocale } from './commi'
 import { crystalLabByLocale } from './crystalLab'
 import { linkesByLocale } from './linkes'
+import { palworldPaldeckByLocale } from './palworldPaldeck'
 import { rotivooByLocale } from './rotivoo'
 import { universusMergeByLocale } from './universusMerge'
 import type { PrivacyDoc } from './types'
@@ -14,6 +15,7 @@ const registry: Record<ProjectSlug, Record<string, PrivacyDoc>> = {
   'universus-merge': universusMergeByLocale,
   bellafy: bellafyByLocale,
   rotivoo: rotivooByLocale,
+  'palworld-paldeck': palworldPaldeckByLocale,
 }
 
 export const privacyLangButtonLabel: Record<string, string> = {

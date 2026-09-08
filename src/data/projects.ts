@@ -1,4 +1,4 @@
-export type ProjectSlug = 'commi-app' | 'linkes' | 'crystal-lab' | 'universus-merge' | 'bellafy' | 'rotivoo'
+export type ProjectSlug = 'commi-app' | 'linkes' | 'crystal-lab' | 'universus-merge' | 'bellafy' | 'rotivoo' | 'palworld-paldeck'
 
 export type Project = {
   slug: ProjectSlug
@@ -12,6 +12,24 @@ export type Project = {
 }
 
 export const projects: Project[] = [
+  {
+    slug: 'palworld-paldeck',
+    title: 'Palworld Paldeck',
+    shortDescription:
+      'Seu guia de Pals: catálogo, reprodução, habitats e equipes, também offline.',
+    description:
+      'O Palworld Paldeck é um guia de fãs para consultar Pals, planejar combinações de reprodução e organizar suas aventuras em Palworld. Explore atributos, elementos, habilidades, aptidões de trabalho e itens; encontre habitats nos mapas e monte equipes com os Pals da sua coleção. O catálogo funciona offline, com conteúdo em português brasileiro e inglês. Aplicativo independente, sem afiliação ou endosso da Pocketpair.',
+    features: [
+      'Catálogo de Pals com busca, atributos e filtros por elemento, aptidão de trabalho e coleção',
+      'Calculadora de reprodução direta e reversa, com prioridade para Pals que você já possui',
+      'Mapas de habitat com ocorrências de dia e noite, zoom e consulta offline',
+      'Busca de itens, drops, receitas e formas de obtenção',
+      'Favoritos, coleção e equipes de até cinco Pals, com notas salvas no dispositivo',
+      'Interface e conteúdo em português brasileiro e inglês, sem necessidade de criar conta',
+    ],
+    appStoreUrl: null,
+    playStoreUrl: null,
+  },
   {
     slug: 'commi-app',
     title: 'Commi',
