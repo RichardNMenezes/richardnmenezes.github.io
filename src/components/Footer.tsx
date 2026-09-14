@@ -1,7 +1,7 @@
 export default function Footer ({ locale = 'pt-BR' }: { locale?: string }) {
   return (
     <footer className="site-footer">
-      <p>© {new Date ().getFullYear ()} Richard Menezes. {locale === 'en' ? 'All rights reserved.' : 'Todos os direitos reservados.'}</p>
+      <p>© {new Date ().getFullYear ()} Richard Menezes. {locale === 'en' ? 'All rights reserved.' : locale === 'es' ? 'Todos los derechos reservados.' : 'Todos os direitos reservados.'}</p>
       <style>{`
         .site-footer {
           margin-top: 4rem;

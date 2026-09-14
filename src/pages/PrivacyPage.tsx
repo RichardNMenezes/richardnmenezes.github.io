@@ -91,14 +91,14 @@ export default function PrivacyPage () {
         <div className="nav-row">
           <Link to={`/project/${slug}`} className="back-link">
             <ArrowBack />
-            {locale === 'en' ? 'Back to app' : 'Voltar ao app'}
+            {locale === 'en' ? 'Back to app' : locale === 'es' ? 'Volver a la aplicación' : 'Voltar ao app'}
           </Link>
           <Link to="/" className="back-link subtle">
-            {locale === 'en' ? 'Portfolio' : 'Portfólio'}
+            {locale === 'en' ? 'Portfolio' : locale === 'es' ? 'Portafolio' : 'Portfólio'}
           </Link>
           {isValidTermsSlug (slug) ? (
             <Link to={`/terms/${slug}`} className="back-link">
-              {locale === 'en' ? 'Terms of use' : 'Termos de uso'}
+              {locale === 'en' ? 'Terms of use' : locale === 'es' ? 'Términos de uso' : 'Termos de uso'}
             </Link>
           ) : null}
         </div>

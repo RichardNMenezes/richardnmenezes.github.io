@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { Link, Navigate, useParams } from 'react-router-dom'
 import { getProjectBySlug } from '../data/projects'
 import { isValidTermsSlug } from '../data/terms'
@@ -23,6 +24,14 @@ export default function ProjectPage () {
   const { slug } = useParams ()
   const project = slug ? getProjectBySlug (slug) : undefined
 
+  useEffect (() => {
+    if (!project) return
+    document.title = `${project.title} · Richard Menezes`
+    return () => {
+      document.title = 'Richard Menezes · Desenvolvedor Web e Mobile'
+    }
+  }, [project])
+
   if (!project) {
     return <Navigate to="/" replace />
   }
@@ -39,6 +48,17 @@ export default function ProjectPage () {
       <ScrollReveal delay={0.05}>
         <h1 className="project-hero-title">{project.title}</h1>
       </ScrollReveal>
+
+      {project.image ? (
+        <ScrollReveal delay={0.06}>
+          <img
+            className="project-hero-image"
+            src={project.image.src}
+            alt={project.image.alt}
+            decoding="async"
+          />
+        </ScrollReveal>
+      ) : null}
 
       <ScrollReveal delay={0.08}>
         <section className="block" aria-labelledby="desc-heading">
@@ -73,9 +93,9 @@ export default function ProjectPage () {
       <ScrollReveal delay={0.12}>
         <div className="legal-cta-wrap">
           <Link to={`/privacy/${project.slug}`} className="btn-legal btn-legal-primary">
-            Política de privacidade{project.slug === 'palworld-paldeck' ? ' · PT-BR' : ''}
+            Política de privacidade{['palworld-paldeck', 'shiny-farm'].includes (project.slug) ? ' · PT-BR' : ''}
           </Link>
-          {project.slug === 'palworld-paldeck' ? (
+          {['palworld-paldeck', 'shiny-farm'].includes (project.slug) ? (
             <Link
               to={`/privacy/${project.slug}?lang=en`}
               className="btn-legal btn-legal-secondary"
@@ -83,6 +103,16 @@ export default function ProjectPage () {
               hrefLang="en"
             >
               Privacy policy · English
+            </Link>
+          ) : null}
+          {project.slug === 'shiny-farm' ? (
+            <Link
+              to={`/privacy/${project.slug}?lang=es`}
+              className="btn-legal btn-legal-secondary"
+              lang="es"
+              hrefLang="es"
+            >
+              Política de privacidad · Español
             </Link>
           ) : null}
           {isValidTermsSlug (project.slug) ? (
@@ -127,6 +157,16 @@ export default function ProjectPage () {
           -webkit-background-clip: text;
           background-clip: text;
           color: transparent;
+        }
+        .project-hero-image {
+          display: block;
+          width: 100%;
+          aspect-ratio: 16 / 9;
+          object-fit: cover;
+          object-position: center 42%;
+          border-radius: 18px;
+          border: 1px solid var(--border);
+          margin-bottom: 2rem;
         }
         .block {
           margin-bottom: 2.25rem;

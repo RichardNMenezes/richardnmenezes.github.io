@@ -5,6 +5,7 @@ import { crystalLabByLocale } from './crystalLab'
 import { linkesByLocale } from './linkes'
 import { palworldPaldeckByLocale } from './palworldPaldeck'
 import { rotivooByLocale } from './rotivoo'
+import { shinyFarmByLocale } from './shinyFarm'
 import { universusMergeByLocale } from './universusMerge'
 import type { PrivacyDoc } from './types'
 
@@ -16,6 +17,7 @@ const registry: Record<ProjectSlug, Record<string, PrivacyDoc>> = {
   bellafy: bellafyByLocale,
   rotivoo: rotivooByLocale,
   'palworld-paldeck': palworldPaldeckByLocale,
+  'shiny-farm': shinyFarmByLocale,
 }
 
 export const privacyLangButtonLabel: Record<string, string> = {

@@ -1,4 +1,4 @@
-export type ProjectSlug = 'commi-app' | 'linkes' | 'crystal-lab' | 'universus-merge' | 'bellafy' | 'rotivoo' | 'palworld-paldeck'
+export type ProjectSlug = 'commi-app' | 'linkes' | 'crystal-lab' | 'universus-merge' | 'bellafy' | 'rotivoo' | 'palworld-paldeck' | 'shiny-farm'
 
 export type Project = {
   slug: ProjectSlug
@@ -6,12 +6,37 @@ export type Project = {
   shortDescription: string
   description: string
   features: string[]
+  image?: { src: string, alt: string }
   /** null = botão desativado / em breve */
   appStoreUrl: string | null
   playStoreUrl: string | null
 }
 
 export const projects: Project[] = [
+  {
+    slug: 'shiny-farm',
+    title: 'Shiny Farm',
+    shortDescription:
+      'Plante, cuide dos animais e transforme cada colheita em uma fazenda maior.',
+    description:
+      'No Shiny Farm, sua fazenda cresce no seu ritmo. Plante trigo, milho, cenoura, tomate e morango, cuide das galinhas, produza farinha no moinho e colha maçãs no pomar. Guarde a produção no celeiro, complete pedidos do mercado e use moedas e experiência para liberar novos terrenos e setores. Lina, sua assistente fazendeira, acompanha os primeiros passos. O crescimento das plantações continua contando mesmo com o jogo fechado, e seu progresso fica salvo no aparelho.',
+    features: [
+      'Cinco tipos de cultivo, com rega, cuidados contra pragas e fertilizantes para acelerar o crescimento',
+      'Fazenda com plantação, celeiro, galinheiro, moinho, pomar e mercado, desbloqueados conforme seu nível',
+      'Produção de ovos, farinha e maçãs para completar pedidos e ganhar moedas e experiência',
+      'Missões por setor, desafios diários, sequências de dias e baús de recompensa',
+      'Expansão para até 20 terrenos e tutoriais guiados pela Lina',
+      'Progresso local e crescimento calculado ao voltar, sem necessidade de criar conta',
+      'Interface em português, inglês e espanhol, com escolha de idioma nas configurações',
+      'Vídeos opcionais com recompensas e anúncios em intervalos entre colheitas',
+    ],
+    image: {
+      src: '/assets/shiny-farm/farm.png',
+      alt: 'Fazenda do Shiny Farm com plantação, celeiro, galinheiro, moinho, pomar e mercado.',
+    },
+    appStoreUrl: null,
+    playStoreUrl: null,
+  },
   {
     slug: 'palworld-paldeck',
     title: 'Palworld Guide List',
