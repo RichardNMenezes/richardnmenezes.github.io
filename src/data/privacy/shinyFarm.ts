@@ -23,32 +23,33 @@ export const shinyFarmByLocale: Record<'pt-BR' | 'en' | 'es', PrivacyDoc> = {
       {
         heading: '3. Progresso e preferências no aparelho',
         body:
-          'O jogo salva localmente moedas, experiência, nível, terrenos, cultivos e horários de crescimento, inventário, animais, moinho, pomar, pedidos, missões e recompensas. Também guarda idioma, tutoriais concluídos e registros usados para limitar anúncios e evitar recompensas duplicadas. Esses dados permitem retomar a fazenda e calcular o crescimento após fechar o app. Não há conta nem sincronização própria do save em nuvem. Eventos de algumas ações e indicadores de progresso são enviados ao serviço de análise descrito na seção 4; eles não constituem uma cópia recuperável da fazenda. Backups do sistema podem incluir dados locais conforme suas configurações.',
+          'O jogo salva localmente moedas, experiência, nível, terrenos, cultivos e horários de crescimento, inventário, animais, moinho, pomar, pedidos, missões e recompensas. Também guarda idioma, tutoriais concluídos, preferências de notificações, a conclusão da apresentação de privacidade e registros usados para limitar anúncios e evitar recompensas duplicadas. Esses dados permitem retomar a fazenda e calcular o crescimento após fechar o app. Não há conta nem sincronização própria do save em nuvem. Eventos de algumas ações e indicadores de progresso são enviados ao serviço de análise descrito na seção 4; eles não constituem uma cópia recuperável da fazenda. Backups do sistema podem incluir dados locais conforme suas configurações.',
       },
       {
         heading: '4. Análise de uso — Google Analytics para Firebase',
         body:
-          'Nas versões com Firebase Analytics disponível, o app envia eventos de início de sessão, telas visitadas, plantio, rega, colheita, alimentação de galinhas, produção, pedidos, desbloqueios, missões e anúncios recompensados. Os eventos podem incluir tipos de cultivo, identificadores de terrenos e missões, moedas virtuais, experiência e quantidades. Nível e número de terrenos liberados também são associados à instalação para entender a progressão e melhorar o equilíbrio do jogo. O serviço pode tratar identificadores da instalação ou do dispositivo e informações técnicas, como versão do app, sistema, idioma e região aproximada. Esses dados não são necessariamente anônimos, mesmo sem cadastro.',
+          'Nas versões com Firebase Analytics disponível, o app envia eventos de início de sessão, telas visitadas, plantio, rega, colheita, produção, pedidos, desbloqueios, missões, atividades e anúncios. Os eventos podem incluir tipos de cultivo, identificadores de terrenos e missões, moedas virtuais, experiência e quantidades. Também são registrados falhas e recuperação do salvamento, resultados e duração de anúncios, escolhas de consentimento, estado das permissões e interações com notificações. Nível e número de terrenos liberados são associados à instalação para entender a progressão e melhorar o equilíbrio e a estabilidade do jogo. O serviço pode tratar identificadores da instalação ou do dispositivo e informações técnicas, como versão do app, sistema, idioma e região aproximada. Esses eventos e diagnósticos podem estar vinculados à instalação; não são necessariamente anônimos, mesmo sem cadastro. O conteúdo completo do save e suas cópias locais de recuperação não são enviados ao Analytics.',
         links: [{ label: 'Privacidade e segurança no Firebase', href: 'https://firebase.google.com/support/privacy?hl=pt-br' }],
       },
       {
         heading: '5. Publicidade — Google AdMob',
         body:
-          'O Shiny Farm usa Google AdMob para vídeos opcionais que concedem recompensas e anúncios em tela cheia em oportunidades entre colheitas. Recusar um vídeo significa não receber seu bônus, mas permite continuar jogando. O app solicita anúncios não personalizados. Ainda assim, o serviço pode tratar IP, identificadores de publicidade ou dispositivo, interações e diagnósticos para exibir e medir anúncios e prevenir fraude. O IP pode indicar uma região aproximada. O uso de identificadores depende também das permissões do sistema.',
+          'O Shiny Farm usa Google AdMob para vídeos opcionais que concedem recompensas e anúncios em tela cheia em oportunidades entre colheitas. Recusar um vídeo significa não receber seu bônus adicional, mas permite continuar jogando e manter recompensas já obtidas. Os anúncios podem ser personalizados quando as escolhas de consentimento e as permissões aplicáveis permitirem. No iOS, o app solicita anúncios não personalizados quando a autorização de rastreamento não foi concedida, desde que o serviço permita exibir anúncios. Anúncios não personalizados ainda podem envolver coleta de dados: IP e região aproximada, identificadores de publicidade ou dispositivo, anúncios exibidos, interações, dados de desempenho, falhas e outros diagnósticos, para publicidade, medição, análise e prevenção de fraude. Quando autorizado, o identificador de publicidade pode ser usado pelo Google e seus parceiros para relacionar a atividade com dados de apps e sites de outras empresas para publicidade direcionada e medição. A permissão de rastreamento do iOS é separada das escolhas de consentimento de anúncios.',
         links: [
           { label: 'Política de privacidade do Google', href: 'https://policies.google.com/privacy?hl=pt-BR' },
-          { label: 'Dados tratados pelo Google Mobile Ads', href: 'https://developers.google.com/admob/android/privacy/play-data-disclosure' },
+          { label: 'Dados tratados pelo Google Mobile Ads (Android)', href: 'https://developers.google.com/admob/android/privacy/play-data-disclosure' },
+          { label: 'Dados tratados pelo Google Mobile Ads (iOS)', href: 'https://developers.google.com/admob/ios/privacy/data-disclosure' },
         ],
       },
       {
         heading: '6. Escolhas e consentimento',
         body:
-          'Você pode gerenciar identificadores de publicidade no Android e permissões de rastreamento no iOS nas configurações do aparelho, conforme a versão do sistema. Esses controles não desligam automaticamente todos os serviços de análise. A versão atual do Shiny Farm não oferece um botão interno para desativar o Analytics nem uma tela própria para gerenciar consentimento de anúncios. Recusar uma recompensa ou escolher outro idioma não interrompe a análise de uso. Esta política não substitui consentimento quando ele for exigido. Para solicitações relacionadas a dados ou consentimento, utilize o contato da seção 1.',
+          'O app apresenta uma explicação sobre privacidade e utiliza a Google User Messaging Platform (UMP) para verificar o consentimento e apresentar formulários quando exigidos para sua região e pelas configurações do serviço. Essa integração pode tratar região aproximada, interações e informações de desempenho para operar os formulários e as opções de privacidade. No iOS, o sistema também pode pedir autorização de rastreamento por meio do App Tracking Transparency (ATT). Você pode recusar essa autorização e continuar jogando. Em Configurações > Privacidade e anúncios, a opção Revisar escolhas de anúncios aparece quando o Google exige a disponibilização desse formulário; nela você pode revisar as escolhas oferecidas. Também é possível gerenciar o rastreamento no iOS e os identificadores de publicidade no Android pelos ajustes do aparelho. O app não possui um botão separado para desativar o Firebase Analytics. Recusar um vídeo, notificações ou a permissão ATT não desativa, por si só, toda a análise de uso. Para solicitações sobre dados ou consentimento, utilize o contato da seção 1.',
       },
       {
-        heading: '7. Atualizações e conexões externas',
+        heading: '7. Notificações, atualizações e conexões externas',
         body:
-          'O app utiliza Expo EAS Update para consultar e baixar atualizações compatíveis. Essas conexões envolvem IP e informações técnicas da requisição, incluindo plataforma e versão de execução. O save da fazenda não é enviado como parte dessa atualização. Google e Expo tratam informações necessárias aos respectivos serviços. Ao acessar lojas ou links externos, aplicam-se também as políticas dos responsáveis por esses destinos.',
+          'Com sua permissão, o app agenda no próprio aparelho lembretes de produção pronta e de missões diárias usando Expo Notifications. Você pode escolher as categorias nas configurações do jogo e desativar a permissão nos ajustes do sistema. Na versão atual, esses lembretes são locais: o app não registra um token de push para enviá-lo a um servidor de notificações. Eventos de agendamento, abertura e preferências podem ser enviados ao Firebase conforme a seção 4. O app também utiliza Expo EAS Update para consultar e baixar atualizações compatíveis. Essas conexões envolvem IP e informações técnicas da requisição, incluindo plataforma e versão de execução. O save da fazenda não é enviado como parte dessa atualização. Google e Expo tratam informações necessárias aos respectivos serviços. Ao acessar lojas ou links externos, aplicam-se também as políticas dos responsáveis por esses destinos.',
         links: [{ label: 'Política de privacidade da Expo', href: 'https://expo.dev/privacy' }],
       },
       {
@@ -83,7 +84,7 @@ export const shinyFarmByLocale: Record<'pt-BR' | 'en' | 'es', PrivacyDoc> = {
           'Esta política pode ser atualizada quando o jogo, os serviços integrados ou os requisitos aplicáveis mudarem. A data abaixo identifica a revisão. Alterações que exijam aviso ou consentimento adicional deverão ser comunicadas pelos meios apropriados. As versões em português, inglês e espanhol descrevem as mesmas práticas.',
       },
     ],
-    lastUpdated: '13 de setembro de 2026',
+    lastUpdated: '19 de setembro de 2026',
   },
   en: {
     locale: 'en',
@@ -107,32 +108,33 @@ export const shinyFarmByLocale: Record<'pt-BR' | 'en' | 'es', PrivacyDoc> = {
       {
         heading: '3. Progress and preferences on your device',
         body:
-          'The game locally saves coins, experience, level, plots, crops and growth times, inventory, animals, the mill, orchard, orders, missions and rewards. It also stores your language, completed tutorials and records used to limit ads and prevent duplicate rewards. These records let you resume your farm and calculate growth after closing the app. There is no account or game-managed cloud save synchronization. Events for some actions and progress indicators are sent to the analytics service described in section 4; they do not constitute a recoverable copy of your farm. System backups may include local data depending on your settings.',
+          'The game locally saves coins, experience, level, plots, crops and growth times, inventory, animals, the mill, orchard, orders, missions and rewards. It also stores your language, completed tutorials, notification preferences, completion of the privacy introduction and records used to limit ads and prevent duplicate rewards. These records let you resume your farm and calculate growth after closing the app. There is no account or game-managed cloud save synchronization. Events for some actions and progress indicators are sent to the analytics service described in section 4; they do not constitute a recoverable copy of your farm. System backups may include local data depending on your settings.',
       },
       {
         heading: '4. Usage analytics — Google Analytics for Firebase',
         body:
-          'In versions where Firebase Analytics is available, the app sends events for session starts, screens viewed, planting, watering, harvesting, feeding chickens, production, orders, unlocks, missions and rewarded ads. Events may include crop types, plot and mission identifiers, virtual coins, experience and quantities. Level and the number of unlocked plots are also associated with the installation to understand progression and improve game balance. The service may process installation or device identifiers and technical information such as app version, operating system, language and approximate region. This data is not necessarily anonymous, even without registration.',
+          'In versions where Firebase Analytics is available, the app sends events for session starts, screens viewed, planting, watering, harvesting, production, orders, unlocks, missions, activities and ads. Events may include crop types, plot and mission identifiers, virtual coins, experience and quantities. Save failures and recovery, ad outcomes and duration, consent choices, permission status and notification interactions are also recorded. Level and the number of unlocked plots are associated with the installation to understand progression and improve game balance and stability. The service may process installation or device identifiers and technical information such as app version, operating system, language and approximate region. These events and diagnostics may be linked to the installation; they are not necessarily anonymous, even without registration. The complete save and its local recovery copies are not sent to Analytics.',
         links: [{ label: 'Privacy and security in Firebase', href: 'https://firebase.google.com/support/privacy' }],
       },
       {
         heading: '5. Advertising — Google AdMob',
         body:
-          'Shiny Farm uses Google AdMob for optional videos that grant rewards and full-screen ads at opportunities between harvests. Declining a video means you do not receive its bonus, but you can continue playing. The app requests non-personalized ads. The service may still process IP addresses, advertising or device identifiers, interactions and diagnostics to display and measure ads and prevent fraud. An IP address may indicate an approximate region. Identifier use also depends on system permissions.',
+          'Shiny Farm uses Google AdMob for optional videos that grant rewards and full-screen ads at opportunities between harvests. Declining a video means you do not receive its additional bonus, but you can continue playing and keep rewards already earned. Ads may be personalized when consent choices and applicable permissions allow it. On iOS, the app requests non-personalized ads when tracking authorization has not been granted, provided the service allows ads to be shown. Non-personalized ads may still involve data collection: IP address and approximate region, advertising or device identifiers, ads displayed, interactions, performance data, crashes and other diagnostics, for advertising, measurement, analytics and fraud prevention. When authorized, Google and its partners may use the advertising identifier to connect activity with data from other companies’ apps and websites for targeted advertising and measurement. iOS tracking permission is separate from ad consent choices.',
         links: [
           { label: 'Google privacy policy', href: 'https://policies.google.com/privacy?hl=en' },
-          { label: 'Data handled by Google Mobile Ads', href: 'https://developers.google.com/admob/android/privacy/play-data-disclosure' },
+          { label: 'Data handled by Google Mobile Ads (Android)', href: 'https://developers.google.com/admob/android/privacy/play-data-disclosure' },
+          { label: 'Data handled by Google Mobile Ads (iOS)', href: 'https://developers.google.com/admob/ios/privacy/data-disclosure' },
         ],
       },
       {
         heading: '6. Choices and consent',
         body:
-          'You can manage advertising identifiers on Android and tracking permissions on iOS in your device settings, depending on the system version. These controls do not automatically switch off all analytics services. The current version of Shiny Farm does not offer an in-app Analytics opt-out or its own screen for managing ad consent. Declining a reward or choosing another language does not stop usage analytics. This policy does not replace consent where consent is required. For requests concerning data or consent, use the contact in section 1.',
+          'The app provides a privacy introduction and uses Google User Messaging Platform (UMP) to check consent and present forms when required for your region and by service settings. This integration may process approximate region, interactions and performance information to operate the forms and privacy options. On iOS, the system may also request tracking authorization through App Tracking Transparency (ATT). You can decline this authorization and continue playing. Under Settings > Privacy and ads, Review ad choices appears when Google requires this form to be made available; you can use it to review the choices offered. You can also manage tracking on iOS and advertising identifiers on Android through device settings. The app does not have a separate switch to disable Firebase Analytics. Declining a video, notifications or ATT permission does not, by itself, disable all usage analytics. For requests about data or consent, use the contact in section 1.',
       },
       {
-        heading: '7. Updates and external connections',
+        heading: '7. Notifications, updates and external connections',
         body:
-          'The app uses Expo EAS Update to check for and download compatible updates. These connections involve an IP address and technical request information, including platform and runtime version. Your farm save is not sent as part of this update. Google and Expo process information needed for their respective services. When you visit stores or external links, the policies of those destinations also apply.',
+          'With your permission, the app schedules production-ready and daily-mission reminders on your device using Expo Notifications. You can choose categories in game settings and disable permission in system settings. In the current version these reminders are local: the app does not register a push token to send to a notification server. Scheduling, opening and preference events may be sent to Firebase as described in section 4. The app also uses Expo EAS Update to check for and download compatible updates. These connections involve an IP address and technical request information, including platform and runtime version. Your farm save is not sent as part of this update. Google and Expo process information needed for their respective services. When you visit stores or external links, the policies of those destinations also apply.',
         links: [{ label: 'Expo privacy policy', href: 'https://expo.dev/privacy' }],
       },
       {
@@ -167,7 +169,7 @@ export const shinyFarmByLocale: Record<'pt-BR' | 'en' | 'es', PrivacyDoc> = {
           'This policy may be updated when the game, integrated services or applicable requirements change. The date below identifies the revision. Changes requiring additional notice or consent must be communicated through appropriate channels. The Portuguese, English and Spanish versions describe the same practices.',
       },
     ],
-    lastUpdated: 'September 13, 2026',
+    lastUpdated: 'September 19, 2026',
   },
   es: {
     locale: 'es',
@@ -191,32 +193,33 @@ export const shinyFarmByLocale: Record<'pt-BR' | 'en' | 'es', PrivacyDoc> = {
       {
         heading: '3. Progreso y preferencias en el dispositivo',
         body:
-          'El juego guarda localmente monedas, experiencia, nivel, parcelas, cultivos y tiempos de crecimiento, inventario, animales, molino, huerto, pedidos, misiones y recompensas. También guarda el idioma, los tutoriales completados y los registros utilizados para limitar anuncios y evitar recompensas duplicadas. Estos datos permiten retomar la granja y calcular el crecimiento después de cerrar la aplicación. No hay cuenta ni sincronización propia de la partida en la nube. Los eventos de algunas acciones y los indicadores de progreso se envían al servicio de análisis descrito en la sección 4; no constituyen una copia recuperable de la granja. Las copias de seguridad del sistema pueden incluir datos locales según tu configuración.',
+          'El juego guarda localmente monedas, experiencia, nivel, parcelas, cultivos y tiempos de crecimiento, inventario, animales, molino, huerto, pedidos, misiones y recompensas. También guarda el idioma, los tutoriales completados, las preferencias de notificaciones, la finalización de la introducción sobre privacidad y los registros utilizados para limitar anuncios y evitar recompensas duplicadas. Estos datos permiten retomar la granja y calcular el crecimiento después de cerrar la aplicación. No hay cuenta ni sincronización propia de la partida en la nube. Los eventos de algunas acciones y los indicadores de progreso se envían al servicio de análisis descrito en la sección 4; no constituyen una copia recuperable de la granja. Las copias de seguridad del sistema pueden incluir datos locales según tu configuración.',
       },
       {
         heading: '4. Análisis de uso — Google Analytics para Firebase',
         body:
-          'En las versiones con Firebase Analytics disponible, la aplicación envía eventos de inicio de sesión de juego, pantallas visitadas, siembra, riego, cosecha, alimentación de gallinas, producción, pedidos, desbloqueos, misiones y anuncios con recompensa. Los eventos pueden incluir tipos de cultivo, identificadores de parcelas y misiones, monedas virtuales, experiencia y cantidades. El nivel y el número de parcelas desbloqueadas también se asocian a la instalación para entender la progresión y mejorar el equilibrio del juego. El servicio puede tratar identificadores de instalación o dispositivo e información técnica, como versión de la aplicación, sistema, idioma y región aproximada. Estos datos no son necesariamente anónimos, incluso sin registro.',
+          'En las versiones con Firebase Analytics disponible, la aplicación envía eventos de inicio de sesión de juego, pantallas visitadas, siembra, riego, cosecha, producción, pedidos, desbloqueos, misiones, actividades y anuncios. Los eventos pueden incluir tipos de cultivo, identificadores de parcelas y misiones, monedas virtuales, experiencia y cantidades. También se registran fallos y recuperación del guardado, resultados y duración de anuncios, elecciones de consentimiento, estado de los permisos e interacciones con notificaciones. El nivel y el número de parcelas desbloqueadas se asocian a la instalación para entender la progresión y mejorar el equilibrio y la estabilidad del juego. El servicio puede tratar identificadores de instalación o dispositivo e información técnica, como versión de la aplicación, sistema, idioma y región aproximada. Estos eventos y diagnósticos pueden estar vinculados a la instalación; no son necesariamente anónimos, incluso sin registro. La partida completa y sus copias locales de recuperación no se envían a Analytics.',
         links: [{ label: 'Privacidad y seguridad en Firebase', href: 'https://firebase.google.com/support/privacy?hl=es' }],
       },
       {
         heading: '5. Publicidad — Google AdMob',
         body:
-          'Shiny Farm utiliza Google AdMob para videos opcionales que otorgan recompensas y anuncios a pantalla completa en oportunidades entre cosechas. Rechazar un video significa no recibir su bonificación, pero permite seguir jugando. La aplicación solicita anuncios no personalizados. Aun así, el servicio puede tratar direcciones IP, identificadores de publicidad o dispositivo, interacciones y diagnósticos para mostrar y medir anuncios y prevenir fraudes. La IP puede indicar una región aproximada. El uso de identificadores también depende de los permisos del sistema.',
+          'Shiny Farm utiliza Google AdMob para videos opcionales que otorgan recompensas y anuncios a pantalla completa en oportunidades entre cosechas. Rechazar un video significa no recibir su bonificación adicional, pero permite seguir jugando y conservar las recompensas ya obtenidas. Los anuncios pueden ser personalizados cuando las elecciones de consentimiento y los permisos aplicables lo permitan. En iOS, la aplicación solicita anuncios no personalizados cuando no se ha concedido la autorización de rastreo, siempre que el servicio permita mostrar anuncios. Los anuncios no personalizados aún pueden implicar recopilación de datos: IP y región aproximada, identificadores de publicidad o dispositivo, anuncios mostrados, interacciones, datos de rendimiento, fallos y otros diagnósticos, para publicidad, medición, análisis y prevención de fraudes. Cuando esté autorizado, Google y sus socios pueden utilizar el identificador publicitario para relacionar la actividad con datos de aplicaciones y sitios de otras empresas para publicidad dirigida y medición. El permiso de rastreo de iOS es independiente de las elecciones de consentimiento publicitario.',
         links: [
           { label: 'Política de privacidad de Google', href: 'https://policies.google.com/privacy?hl=es' },
-          { label: 'Datos tratados por Google Mobile Ads', href: 'https://developers.google.com/admob/android/privacy/play-data-disclosure' },
+          { label: 'Datos tratados por Google Mobile Ads (Android)', href: 'https://developers.google.com/admob/android/privacy/play-data-disclosure' },
+          { label: 'Datos tratados por Google Mobile Ads (iOS)', href: 'https://developers.google.com/admob/ios/privacy/data-disclosure' },
         ],
       },
       {
         heading: '6. Opciones y consentimiento',
         body:
-          'Puedes gestionar los identificadores de publicidad en Android y los permisos de rastreo en iOS desde los ajustes del dispositivo, según la versión del sistema. Estos controles no desactivan automáticamente todos los servicios de análisis. La versión actual de Shiny Farm no ofrece un botón interno para desactivar Analytics ni una pantalla propia para gestionar el consentimiento publicitario. Rechazar una recompensa o elegir otro idioma no interrumpe el análisis de uso. Esta política no sustituye el consentimiento cuando sea obligatorio. Para solicitudes relacionadas con datos o consentimiento, utiliza el contacto de la sección 1.',
+          'La aplicación presenta una explicación sobre privacidad y utiliza Google User Messaging Platform (UMP) para comprobar el consentimiento y mostrar formularios cuando lo exijan tu región y la configuración del servicio. Esta integración puede tratar la región aproximada, interacciones e información de rendimiento para operar los formularios y las opciones de privacidad. En iOS, el sistema también puede solicitar autorización de rastreo mediante App Tracking Transparency (ATT). Puedes rechazar esta autorización y seguir jugando. En Configuración > Privacidad y anuncios, la opción Revisar elecciones de anuncios aparece cuando Google exige que ese formulario esté disponible; allí puedes revisar las opciones ofrecidas. También puedes gestionar el rastreo en iOS y los identificadores publicitarios en Android desde los ajustes del dispositivo. La aplicación no tiene un botón separado para desactivar Firebase Analytics. Rechazar un video, las notificaciones o el permiso ATT no desactiva, por sí solo, todo el análisis de uso. Para solicitudes sobre datos o consentimiento, utiliza el contacto de la sección 1.',
       },
       {
-        heading: '7. Actualizaciones y conexiones externas',
+        heading: '7. Notificaciones, actualizaciones y conexiones externas',
         body:
-          'La aplicación utiliza Expo EAS Update para consultar y descargar actualizaciones compatibles. Estas conexiones incluyen la dirección IP e información técnica de la solicitud, como plataforma y versión de ejecución. La partida de la granja no se envía como parte de esta actualización. Google y Expo tratan la información necesaria para sus respectivos servicios. Al acceder a tiendas o enlaces externos, también se aplican las políticas de los responsables de esos destinos.',
+          'Con tu permiso, la aplicación programa en el propio dispositivo recordatorios de producción lista y de misiones diarias mediante Expo Notifications. Puedes elegir las categorías en la configuración del juego y desactivar el permiso en los ajustes del sistema. En la versión actual, estos recordatorios son locales: la aplicación no registra un token de push para enviarlo a un servidor de notificaciones. Los eventos de programación, apertura y preferencias pueden enviarse a Firebase según la sección 4. La aplicación también utiliza Expo EAS Update para consultar y descargar actualizaciones compatibles. Estas conexiones incluyen la dirección IP e información técnica de la solicitud, como plataforma y versión de ejecución. La partida de la granja no se envía como parte de esta actualización. Google y Expo tratan la información necesaria para sus respectivos servicios. Al acceder a tiendas o enlaces externos, también se aplican las políticas de los responsables de esos destinos.',
         links: [{ label: 'Política de privacidad de Expo', href: 'https://expo.dev/privacy' }],
       },
       {
@@ -251,6 +254,6 @@ export const shinyFarmByLocale: Record<'pt-BR' | 'en' | 'es', PrivacyDoc> = {
           'Esta política puede actualizarse cuando cambien el juego, los servicios integrados o los requisitos aplicables. La fecha indicada a continuación identifica la revisión. Los cambios que requieran aviso o consentimiento adicional deberán comunicarse por los medios apropiados. Las versiones en portugués, inglés y español describen las mismas prácticas.',
       },
     ],
-    lastUpdated: '13 de septiembre de 2026',
+    lastUpdated: '19 de septiembre de 2026',
   },
 }
