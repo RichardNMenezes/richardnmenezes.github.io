@@ -1,4 +1,4 @@
-export type ProjectSlug = 'commi-app' | 'linkes' | 'crystal-lab' | 'universus-merge' | 'bellafy' | 'rotivoo' | 'palworld-paldeck' | 'shiny-farm'
+export type ProjectSlug = 'crazy-condominium' | 'commi-app' | 'linkes' | 'crystal-lab' | 'universus-merge' | 'bellafy' | 'rotivoo' | 'palworld-paldeck' | 'shiny-farm'
 
 export type Project = {
   slug: ProjectSlug
@@ -7,12 +7,32 @@ export type Project = {
   description: string
   features: string[]
   image?: { src: string, alt: string }
+  supportEmail?: string
   /** null = botão desativado / em breve */
   appStoreUrl: string | null
   playStoreUrl: string | null
 }
 
 export const projects: Project[] = [
+  {
+    "slug": "crazy-condominium",
+    "title": "Crazy Condominium",
+    "shortDescription": "Viva a rotina de síndico da Vila Zelin em um condomínio 3D cheio de trabalho e histórias.",
+    "description": "Assuma a administração da Vila Zelin e cuide do condomínio com as próprias mãos. Explore o jardim, o estacionamento, o hall e os corredores dos quatro andares iniciais. Recolha lixo, limpe os espaços e repare bancos, luminárias, cercas e a bomba de água. Consulte as ocorrências no celular do jogo, resolva conflitos de estacionamento e acompanhe o caixa, a ocupação, a satisfação e a reputação. Julia apresenta os primeiros passos, e funcionários especializados ajudam quando os requisitos de contratação forem alcançados. O jogo está em desenvolvimento: expansões, compras e anúncios reais serão apresentados quando estiverem disponíveis.",
+    "features": [
+      "Personagem 3D com nome e aparência escolhidos por você, em cenários detalhados e arredondados",
+      "Torre inicial com quatro andares e dezesseis apartamentos, hall, elevador, administração e oito vagas",
+      "Limpeza, coleta de lixo, reparos, poda e pintura com ferramentas e animações próprias",
+      "Equipe de limpeza e zeladoria com funções distintas e contratação conforme a progressão",
+      "Gestão no celular do jogo: mensagens, chamados, finanças, ocupação e ajuda da Julia",
+      "Progresso salvo no aparelho; o tempo de ausência não gera trabalho, despesas ou penalidades",
+      "Português brasileiro, inglês e espanhol, com escolha de idioma nas configurações",
+      "Análise de uso opcional com Firebase nas versões compatíveis, sem rastreamento publicitário"
+    ],
+    "supportEmail": "menezes.nns@icloud.com",
+    "appStoreUrl": null,
+    "playStoreUrl": null
+  },
   {
     slug: 'shiny-farm',
     title: 'Shiny Farm',

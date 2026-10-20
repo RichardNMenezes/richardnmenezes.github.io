@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useLayoutEffect } from 'react'
 import { Link, Navigate, useParams } from 'react-router-dom'
 import { getProjectBySlug } from '../data/projects'
 import { isValidTermsSlug } from '../data/terms'
@@ -24,7 +24,7 @@ export default function ProjectPage () {
   const { slug } = useParams ()
   const project = slug ? getProjectBySlug (slug) : undefined
 
-  useEffect (() => {
+  useLayoutEffect (() => {
     if (!project) return
     document.title = `${project.title} · Richard Menezes`
     return () => {
@@ -93,9 +93,9 @@ export default function ProjectPage () {
       <ScrollReveal delay={0.12}>
         <div className="legal-cta-wrap">
           <Link to={`/privacy/${project.slug}`} className="btn-legal btn-legal-primary">
-            Política de privacidade{['palworld-paldeck', 'shiny-farm'].includes (project.slug) ? ' · PT-BR' : ''}
+            Política de privacidade{['palworld-paldeck', 'shiny-farm', 'crazy-condominium'].includes (project.slug) ? ' · PT-BR' : ''}
           </Link>
-          {['palworld-paldeck', 'shiny-farm'].includes (project.slug) ? (
+          {['palworld-paldeck', 'shiny-farm', 'crazy-condominium'].includes (project.slug) ? (
             <Link
               to={`/privacy/${project.slug}?lang=en`}
               className="btn-legal btn-legal-secondary"
@@ -105,7 +105,7 @@ export default function ProjectPage () {
               Privacy policy · English
             </Link>
           ) : null}
-          {project.slug === 'shiny-farm' ? (
+          {['shiny-farm', 'crazy-condominium'].includes (project.slug) ? (
             <Link
               to={`/privacy/${project.slug}?lang=es`}
               className="btn-legal btn-legal-secondary"
@@ -122,6 +122,21 @@ export default function ProjectPage () {
           ) : null}
         </div>
       </ScrollReveal>
+
+      {project.supportEmail ? (
+        <ScrollReveal delay={0.13}>
+          <section id="support" className="block support-block" aria-labelledby="support-heading">
+            <h2 id="support-heading" className="block-title">Suporte e privacidade</h2>
+            <p className="block-p">
+              Precisa de ajuda ou quer fazer uma solicitação sobre seus dados? Escreva para{' '}
+              <a href={`mailto:${project.supportEmail}?subject=${encodeURIComponent (project.title)}`}>
+                {project.supportEmail}
+              </a>. Para relatar uma falha, informe a versão do jogo, o modelo do aparelho e o que aconteceu.
+              Não envie senhas, dados de pagamento ou informações sensíveis.
+            </p>
+          </section>
+        </ScrollReveal>
+      ) : null}
 
       <Footer />
       <style>{`
@@ -171,6 +186,8 @@ export default function ProjectPage () {
         .block {
           margin-bottom: 2.25rem;
         }
+        .support-block { scroll-margin-top: 2rem; }
+        .support-block a { color: var(--heading); overflow-wrap: anywhere; text-decoration: underline; }
         .block-title {
           margin: 0 0 0.85rem;
           font-size: 1.15rem;

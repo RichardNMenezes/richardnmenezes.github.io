@@ -1,5 +1,6 @@
 import type { ProjectSlug } from '../projects'
 import { bellafyByLocale } from './bellafy'
+import { crazyCondominiumByLocale } from './crazyCondominium'
 import { commiByLocale } from './commi'
 import { crystalLabByLocale } from './crystalLab'
 import { linkesByLocale } from './linkes'
@@ -10,6 +11,7 @@ import { universusMergeByLocale } from './universusMerge'
 import type { PrivacyDoc } from './types'
 
 const registry: Record<ProjectSlug, Record<string, PrivacyDoc>> = {
+  'crazy-condominium': crazyCondominiumByLocale,
   'commi-app': commiByLocale,
   linkes: linkesByLocale,
   'crystal-lab': crystalLabByLocale,
