@@ -50,9 +50,10 @@ export const gliniByLocale: Record<'pt-BR', PrivacyDoc> = {
         ],
       },
       {
+        id: 'exclusao-da-conta',
         heading: '7. Seus direitos e exclusão da conta',
         body:
-          'Para solicitar a exclusão da sua conta e dos dados vinculados, escreva para o endereço abaixo e informe o e-mail da conta. Use o mesmo canal para pedir confirmação do tratamento, acesso, correção, informações sobre compartilhamento, revogação de consentimento e outros direitos previstos na LGPD, conforme aplicável. Você pode alterar o nome do perfil ou sair da sessão pelo aplicativo. Para interromper o envio de novos arquivos à OpenAI, deixe de autorizar a leitura de fotos ou PDFs nas próximas importações. Ao entrar em contato, evite enviar sua senha ou escalas com dados de terceiros.',
+          'Nas versões que oferecem a exclusão no aplicativo, entre no GLini, abra Perfil → Excluir conta, digite a senha atual e escolha Excluir conta definitivamente na confirmação. O servidor apaga a conta e todas as versões de escala salvas nela, incluindo as linhas da equipe que fazem parte dessas versões. As sessões vinculadas são encerradas em todos os aparelhos. Se precisar de ajuda ou usar uma versão anterior do app, escreva para o endereço abaixo e informe o e-mail da conta. Use o mesmo canal para pedir confirmação do tratamento, acesso, correção, informações sobre compartilhamento, revogação de consentimento e outros direitos previstos na LGPD, conforme aplicável. Você pode alterar o nome do perfil ou sair da sessão pelo aplicativo. Para interromper o envio de novos arquivos à OpenAI, deixe de autorizar a leitura de fotos ou PDFs nas próximas importações. Ao entrar em contato, evite enviar sua senha ou escalas com dados de terceiros.',
         links: [
           { label: 'Solicitar exclusão ou exercer direitos', href: 'mailto:menezes.nns@icloud.com?subject=GLini%20-%20privacidade%20e%20exclus%C3%A3o' },
           { label: 'Direitos dos titulares na ANPD', href: 'https://www.gov.br/anpd/pt-br/assuntos/titular-de-dados-1/direito-dos-titulares' },
