@@ -1,4 +1,5 @@
 export type PrivacySection = {
+  id?: string
   heading: string
   body: string
   links?: { label: string, href: string }[]

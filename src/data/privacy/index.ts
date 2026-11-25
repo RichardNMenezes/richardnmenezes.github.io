@@ -3,6 +3,7 @@ import { bellafyByLocale } from './bellafy'
 import { crazyCondominiumByLocale } from './crazyCondominium'
 import { commiByLocale } from './commi'
 import { crystalLabByLocale } from './crystalLab'
+import { gliniByLocale } from './glini'
 import { linkesByLocale } from './linkes'
 import { palworldPaldeckByLocale } from './palworldPaldeck'
 import { rotivooByLocale } from './rotivoo'
@@ -10,13 +11,16 @@ import { shinyFarmByLocale } from './shinyFarm'
 import { universusMergeByLocale } from './universusMerge'
 import type { PrivacyDoc } from './types'
 
-const registry: Record<ProjectSlug, Record<string, PrivacyDoc>> = {
+type PrivacySlug = ProjectSlug | 'glini'
+
+const registry: Record<PrivacySlug, Record<string, PrivacyDoc>> = {
   'crazy-condominium': crazyCondominiumByLocale,
   'commi-app': commiByLocale,
   linkes: linkesByLocale,
   'crystal-lab': crystalLabByLocale,
   'universus-merge': universusMergeByLocale,
   bellafy: bellafyByLocale,
+  glini: gliniByLocale,
   rotivoo: rotivooByLocale,
   'palworld-paldeck': palworldPaldeckByLocale,
   'shiny-farm': shinyFarmByLocale,
@@ -30,16 +34,16 @@ export const privacyLangButtonLabel: Record<string, string> = {
   ru: 'Русский',
 }
 
-export function getPrivacyLocaleIds (slug: ProjectSlug): string[] {
+export function getPrivacyLocaleIds (slug: PrivacySlug): string[] {
   return Object.keys (registry[slug])
 }
 
-export function isValidPrivacySlug (slug: string): slug is ProjectSlug {
-  return slug in registry
+export function isValidPrivacySlug (slug: string): slug is PrivacySlug {
+  return Object.hasOwn (registry, slug)
 }
 
 /** locale query ou pt-BR por defeito */
-export function resolvePrivacyLocale (slug: ProjectSlug, raw: string | null): string {
+export function resolvePrivacyLocale (slug: PrivacySlug, raw: string | null): string {
   const allowed = getPrivacyLocaleIds (slug)
   const fallback = 'pt-BR'
   if (!raw || !allowed.includes (raw)) return fallback

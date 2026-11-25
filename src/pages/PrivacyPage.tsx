@@ -4,10 +4,11 @@ import {
 import {
   Link,
   Navigate,
+  useLocation,
   useParams,
   useSearchParams,
 } from 'react-router-dom'
-import type { ProjectSlug } from '../data/projects'
+import { getProjectBySlug } from '../data/projects'
 import {
   getPrivacy,
   getPrivacyLocaleIds,
@@ -43,21 +44,21 @@ function privacyPath (slug: string, locale: string): string {
 
 export default function PrivacyPage () {
   const { slug } = useParams ()
+  const { hash } = useLocation ()
   const [searchParams] = useSearchParams ()
   const rawLang = searchParams.get ('lang')
 
-  const projectSlug =
-    slug && isValidPrivacySlug (slug) ? (slug as ProjectSlug) : null
-  const allowed = projectSlug ? getPrivacyLocaleIds (projectSlug) : []
+  const privacySlug = slug && isValidPrivacySlug (slug) ? slug : null
+  const allowed = privacySlug ? getPrivacyLocaleIds (privacySlug) : []
   const invalidLang = Boolean (
-    rawLang && projectSlug && !allowed.includes (rawLang)
+    rawLang && privacySlug && !allowed.includes (rawLang)
   )
   const locale =
-    projectSlug && !invalidLang
-      ? resolvePrivacyLocale (projectSlug, rawLang)
+    privacySlug && !invalidLang
+      ? resolvePrivacyLocale (privacySlug, rawLang)
       : 'pt-BR'
   const doc =
-    projectSlug && !invalidLang ? getPrivacy (projectSlug, locale) : undefined
+    privacySlug && !invalidLang ? getPrivacy (privacySlug, locale) : undefined
 
   useLayoutEffect (() => {
     if (!doc) return
@@ -68,6 +69,10 @@ export default function PrivacyPage () {
       document.title = 'Richard Menezes · Desenvolvedor Web e Mobile'
     }
   }, [doc, slug])
+
+  useLayoutEffect (() => {
+    if (doc && hash) document.getElementById (hash.slice (1))?.scrollIntoView ()
+  }, [doc, hash])
 
   if (!slug || !isValidPrivacySlug (slug)) {
     return <Navigate to="/" replace />
@@ -89,10 +94,12 @@ export default function PrivacyPage () {
     <div className="shell">
       <ScrollReveal>
         <div className="nav-row">
-          <Link to={`/project/${slug}`} className="back-link">
-            <ArrowBack />
-            {locale === 'en' ? 'Back to app' : locale === 'es' ? 'Volver a la aplicación' : 'Voltar ao app'}
-          </Link>
+          {getProjectBySlug (slug) ? (
+            <Link to={`/project/${slug}`} className="back-link">
+              <ArrowBack />
+              {locale === 'en' ? 'Back to app' : locale === 'es' ? 'Volver a la aplicación' : 'Voltar ao app'}
+            </Link>
+          ) : null}
           <Link to="/" className="back-link subtle">
             {locale === 'en' ? 'Portfolio' : locale === 'es' ? 'Portafolio' : 'Portfólio'}
           </Link>
@@ -137,7 +144,7 @@ export default function PrivacyPage () {
 
       {doc.sections.map ((sec, i) => (
         <ScrollReveal key={`${locale}-${sec.heading}`} delay={0.08 + i * 0.02}>
-          <section className="privacy-section">
+          <section id={sec.id} className="privacy-section">
             <h2>{sec.heading}</h2>
             <p>{sec.body}</p>
             {sec.links && (
