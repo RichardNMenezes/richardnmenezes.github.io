@@ -31,7 +31,12 @@ export const gliniByLocale: Record<'pt-BR', PrivacyDoc> = {
       {
         heading: '4. Importação de planilhas, imagens e PDF',
         body:
-          'Você escolhe o arquivo que o GLini vai ler. Planilhas CSV e XLSX são processadas pela API do GLini. Quando a leitura de imagens e PDFs estiver disponível no ambiente usado, o GLini pede autorização antes de enviar o arquivo selecionado e a competência à OpenAI para extrair os campos da escala. Você pode optar por uma planilha se preferir dispensar esse envio. O GLini usa o arquivo para gerar a prévia e salva os campos revisados que você confirmar, sem arquivar o original como anexo. A OpenAI pode tratar a solicitação conforme os controles aplicáveis à sua API.',
+          'Você escolhe o arquivo que o GLini vai ler. Se escolher uma foto da biblioteca, o sistema pode pedir uma permissão opcional de acesso. ' +
+          'O GLini usa apenas a foto selecionada para essa importação. Você pode alterar a permissão nos ajustes do aparelho e continuar a importar pelo seletor de arquivos. ' +
+          'Planilhas CSV e XLSX são processadas pela API do GLini. Para ler fotos ou PDFs com IA, o GLini pede uma autorização específica antes do envio. ' +
+          'Com essa autorização, o arquivo escolhido, o nome cadastrado como referência e a competência, quando informada, são enviados à OpenAI para extrair os campos da escala. ' +
+          'A permissão da biblioteca de fotos é independente dessa autorização. O GLini processa o arquivo para gerar a prévia e guarda na sua conta apenas os dados revisados que você confirmar. ' +
+          'A OpenAI pode reter dados da solicitação conforme os controles de dados aplicáveis à sua API.',
         links: [
           { label: 'Controles de dados da API OpenAI', href: 'https://developers.openai.com/api/docs/guides/your-data' },
         ],
@@ -60,6 +65,6 @@ export const gliniByLocale: Record<'pt-BR', PrivacyDoc> = {
         ],
       },
     ],
-    lastUpdated: '24 de novembro de 2026',
+    lastUpdated: '26 de novembro de 2026',
   },
 }
