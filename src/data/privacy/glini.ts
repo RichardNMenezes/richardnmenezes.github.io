@@ -42,29 +42,34 @@ export const gliniByLocale: Record<'pt-BR', PrivacyDoc> = {
         ],
       },
       {
-        heading: '5. Face ID, biometria e compartilhamento',
+        heading: '5. Anotações, registros de horas e espelho de ponto',
+        body:
+          'Ao usar uma conta, o GLini armazena no servidor as anotações que você registra, os horários de entrada e saída informados e as análises de espelho de ponto que você salva. Esses dados ficam vinculados à sua conta para consulta em outros aparelhos com o mesmo login. A leitura do arquivo CSV do espelho e os cálculos acontecem no aparelho. Ao salvar uma análise, o GLini envia os resultados ao servidor. Esses resultados podem incluir marcações extraídas, totais de horas, diferenças e dados usados para comparar o espelho com a escala e seus registros.',
+      },
+      {
+        heading: '6. Face ID, biometria e compartilhamento',
         body:
           'Você pode ativar ou desativar o Face ID ou a biometria do Android para acessar sua conta. O sistema operacional verifica sua identidade localmente e protege o token armazenado. O GLini não recebe nem guarda imagens, impressões digitais ou modelos biométricos. Ao exportar uma escala como imagem ou PDF, você escolhe no menu do sistema para onde enviá-la. O arquivo pode ficar temporariamente no cache do aparelho. O destinatário ou aplicativo escolhido pode manter sua própria cópia.',
       },
       {
-        heading: '6. Finalidades, serviços usados e conservação',
+        heading: '7. Finalidades, serviços usados e conservação',
         body:
-          'Usamos os dados para oferecer as funções solicitadas, autenticar o acesso, guardar escalas confirmadas, atender solicitações e proteger a operação. Conforme a finalidade, o tratamento se baseia na prestação do serviço, na autorização para recursos opcionais, no interesse legítimo de segurança ou no cumprimento de obrigações legais. Os dados de conta e as versões de escala salvas ficam na infraestrutura do GLini, com armazenamento no MongoDB Atlas, para disponibilizar o serviço. Fornecedores de infraestrutura e de processamento recebem os dados necessários às funções que prestam. Parte desse processamento pode ocorrer fora do Brasil. Dados necessários para cumprir obrigações legais ou exercer direitos podem ser conservados nas hipóteses aplicáveis.',
+          'Usamos os dados para oferecer as funções solicitadas, autenticar o acesso, guardar escalas confirmadas, atender solicitações e proteger a operação. Conforme a finalidade, o tratamento se baseia na prestação do serviço, na autorização para recursos opcionais, no interesse legítimo de segurança ou no cumprimento de obrigações legais. Os dados de conta, as versões de escala salvas, as anotações, os registros de horas e as análises salvas ficam na infraestrutura do GLini, com armazenamento no MongoDB Atlas, para disponibilizar o serviço. Fornecedores de infraestrutura e de processamento recebem os dados necessários às funções que prestam. Parte desse processamento pode ocorrer fora do Brasil. Dados necessários para cumprir obrigações legais ou exercer direitos podem ser conservados nas hipóteses aplicáveis.',
         links: [
           { label: 'Política de privacidade da MongoDB', href: 'https://www.mongodb.com/legal/privacy/privacy-policy' },
         ],
       },
       {
         id: 'exclusao-da-conta',
-        heading: '7. Seus direitos e exclusão da conta',
+        heading: '8. Seus direitos e exclusão da conta',
         body:
-          'Nas versões que oferecem a exclusão no aplicativo, entre no GLini, abra Perfil → Excluir conta, digite a senha atual e escolha Excluir conta definitivamente na confirmação. O servidor apaga a conta e todas as versões de escala salvas nela, incluindo as linhas da equipe que fazem parte dessas versões. As sessões vinculadas são encerradas em todos os aparelhos. Se precisar de ajuda ou usar uma versão anterior do app, escreva para o endereço abaixo e informe o e-mail da conta. Use o mesmo canal para pedir confirmação do tratamento, acesso, correção, informações sobre compartilhamento, revogação de consentimento e outros direitos previstos na LGPD, conforme aplicável. Você pode alterar o nome do perfil ou sair da sessão pelo aplicativo. Para interromper o envio de novos arquivos à OpenAI, deixe de autorizar a leitura de fotos ou PDFs nas próximas importações. Ao entrar em contato, evite enviar sua senha ou escalas com dados de terceiros.',
+          'Nas versões que oferecem a exclusão no aplicativo, entre no GLini, abra Perfil → Segurança → Excluir conta, digite a senha atual e escolha Excluir conta definitivamente na confirmação. O servidor apaga a conta e seus dados salvos, incluindo as versões de escala com as respectivas linhas da equipe, anotações, registros de horas e análises de espelho de ponto. As sessões vinculadas são encerradas em todos os aparelhos. Se precisar de ajuda ou usar uma versão anterior do app, escreva para o endereço abaixo e informe o e-mail da conta. Use o mesmo canal para pedir confirmação do tratamento, acesso, correção, informações sobre compartilhamento, revogação de consentimento e outros direitos previstos na LGPD, conforme aplicável. Você pode alterar o nome do perfil ou sair da sessão pelo aplicativo. Para interromper o envio de novos arquivos à OpenAI, deixe de autorizar a leitura de fotos ou PDFs nas próximas importações. Ao entrar em contato, evite enviar sua senha ou escalas com dados de terceiros.',
         links: [
           { label: 'Solicitar exclusão ou exercer direitos', href: 'mailto:menezes.nns@icloud.com?subject=GLini%20-%20privacidade%20e%20exclus%C3%A3o' },
           { label: 'Direitos dos titulares na ANPD', href: 'https://www.gov.br/anpd/pt-br/assuntos/titular-de-dados-1/direito-dos-titulares' },
         ],
       },
     ],
-    lastUpdated: '26 de novembro de 2026',
+    lastUpdated: '27 de novembro de 2026',
   },
 }
